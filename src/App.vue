@@ -55,7 +55,7 @@ onMounted(() => {
   pointer-events: none;
   z-index: 9999;
   overflow: hidden;
-  opacity: 0.04;
+  opacity: 0.02;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
