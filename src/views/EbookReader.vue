@@ -1032,9 +1032,9 @@ const selectChapter = (index) => {
     currentChapter.value = index
     if (window.innerWidth < 1024) isSidebarOpen.value = false
     
-    gsap.fromTo('.content-container', 
-      { opacity: 0, scale: 0.98, y: 20 }, 
-      { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "expo.out" }
+    gsap.fromTo('.rich-elite-content', 
+      { opacity: 0, y: 10 }, 
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
     )
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -1090,7 +1090,7 @@ onMounted(() => {
           <button v-if="!isSidebarOpen" @click="isSidebarOpen = true" class="menu-toggle">
             <Menu :size="24" />
           </button>
-          <div class="breadcrumb" v-if="isSidebarOpen || window.innerWidth > 1024">
+          <div class="breadcrumb" v-if="!isSidebarOpen">
             <span class="module-name">{{ activeChapter.module }}</span>
             <ChevronRight :size="14" />
             <span class="chapter-name">{{ activeChapter.title }}</span>
