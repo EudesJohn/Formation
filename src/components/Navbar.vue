@@ -45,7 +45,7 @@ onUnmounted(() => {
 <template>
   <nav :class="['navbar', { 'scrolled': isScrolled }]">
     <div class="nav-container">
-      <div class="logo-wrapper" @click="$router.push('/intro')">
+      <div class="logo-wrapper" @click="$router.push('/')">
         <div class="logo">Social<span>Mastery</span></div>
       </div>
 

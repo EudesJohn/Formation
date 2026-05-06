@@ -7,6 +7,11 @@ import QuizView from '../views/QuizView.vue'
 const routes = [
   {
     path: '/',
+    name: 'Landing',
+    component: LandingPage
+  },
+  {
+    path: '/reader',
     name: 'Reader',
     component: EbookReader
   },
@@ -16,17 +21,12 @@ const routes = [
     component: QuizView
   },
   {
-    path: '/intro',
-    name: 'Landing',
-    component: LandingPage
-  },
-  {
     path: '/activate',
     name: 'Activation',
     component: ActivationView
   },
   {
-    path: '/reader',
+    path: '/intro',
     redirect: '/'
   },
   {
