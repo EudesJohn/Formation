@@ -1087,11 +1087,10 @@ onMounted(() => {
     <main class="content-area">
       <header class="content-header">
         <div class="header-left">
-          <button @click="isSidebarOpen = !isSidebarOpen" class="menu-toggle">
-            <Menu :size="24" v-if="!isSidebarOpen" />
-            <X :size="24" v-else />
+          <button v-if="!isSidebarOpen" @click="isSidebarOpen = true" class="menu-toggle">
+            <Menu :size="24" />
           </button>
-          <div class="breadcrumb">
+          <div class="breadcrumb" v-if="isSidebarOpen || window.innerWidth > 1024">
             <span class="module-name">{{ activeChapter.module }}</span>
             <ChevronRight :size="14" />
             <span class="chapter-name">{{ activeChapter.title }}</span>
@@ -1585,5 +1584,7 @@ onMounted(() => {
   .progress-percent { font-size: 0.7rem; }
   .elite-box { padding: 1.5rem !important; border-radius: 16px; }
   .bonus-grid { grid-template-columns: 1fr; }
+  .reader-cover-img { max-width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  .welcome-cover { padding: 0; margin-bottom: 2rem; }
 }
 </style>
