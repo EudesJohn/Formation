@@ -1231,12 +1231,22 @@ onMounted(() => {
   cursor: pointer;
   text-align: left;
   transition: all 0.3s;
+  width: 100%;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
 
 .chapter-link:hover { background: rgba(255, 255, 255, 0.02); color: white; transform: translateX(5px); }
 .chapter-link.active { background: rgba(212, 175, 55, 0.05); color: #D4AF37; }
 
-.chapter-status { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+.chapter-status { 
+  width: 18px; 
+  height: 18px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  flex-shrink: 0; 
+}
 .status-dot { width: 6px; height: 6px; background: #333; border-radius: 50%; }
 .completed { color: #D4AF37; }
 
@@ -1621,5 +1631,12 @@ onMounted(() => {
   .welcome-cover { text-align: center; margin-bottom: 1.5rem; }
   .reader-cover-img { max-width: 250px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); display: inline-block; }
   .glass-card { padding: 1.5rem; margin: 2rem 0; border-radius: 20px; }
+  
+  /* Disable hover transforms on mobile to fix double-tap issue */
+  .chapter-link:hover { transform: none !important; }
+  .luxury-footer-btn:hover { transform: none !important; }
+  .menu-toggle:hover, .close-mobile:hover { transform: none !important; }
+  .elite-btn-prev:hover, .elite-btn-next:hover, .elite-btn-final:hover { transform: none !important; }
+  .btn-small:hover, .btn-luxury:hover, .btn-bonus:hover { transform: none !important; }
 }
 </style>
