@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-dark: #0a0118;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --accent-primary: #7c3aed;
+  --accent-secondary: #2dd4bf;
+  --accent-pink: #f472b6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  
+  /* Protection Anti-Vol */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Allow selection in specific input fields (for the activation code later) */
+input, textarea {
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.glass-card {
+  /* center content and add framing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1rem;
+
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 40px;
+  box-shadow: var(--glass-shadow);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  /* base button improvements */
+  border-radius: 999px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+
+  background: linear-gradient(135deg, var(--accent-primary), #6366f1);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 100px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.07) translateY(-4px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.6);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: scale(0.98) translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Secondary button style */
+
+/* Small button (used for download links) */
+.btn-small {
+  background: linear-gradient(135deg, var(--accent-primary), #6366f1);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(124, 58, 237, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-small:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+}
+
+/* Bonus button style (various colors) */
+.btn-bonus {
+  background: linear-gradient(135deg, var(--accent-secondary), #06b6d4);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-bonus:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(45, 212, 191, 0.35);
+}
+
+.btn-bonus.gold {
+  background: linear-gradient(135deg, #D4AF37, #B8860B);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+}
+
+.btn-bonus.red {
+  background: linear-gradient(135deg, #ef4444, #991b1b);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.btn-bonus.yellow {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
+}
+
+/* Luxury button style */
+.btn-luxury {
+  background: linear-gradient(135deg, #D4AF37, var(--accent-primary));
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: 2px solid #D4AF37;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+/* Mini primary button already defined */
+.btn-secondary {
+  /* unified button style */
+  border-radius: 999px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+
+  background: linear-gradient(135deg, var(--accent-secondary), #06b6d4);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 80px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.07) translateY(-4px);
+  box-shadow: 0 20px 40px rgba(45, 212, 191, 0.6);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(45, 212, 191, 0.4);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Pink accent button */
+.btn-pink {
+  /* unified button style */
+  border-radius: 999px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+
+  background: linear-gradient(135deg, var(--accent-pink), #fb7185);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 80px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(244, 114, 182, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pink:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(244, 114, 182, 0.4);
+}
+
+.btn-pink:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Glass button variant */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 1rem 2rem;
+  border-radius: 80px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-glass:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

@@ -1,0 +1,196 @@
+<script setup>
+import { onMounted, ref } from 'vue'
+import gsap from 'gsap'
+import { Rocket, ChevronRight } from 'lucide-vue-next'
+
+const heroTitle = ref(null)
+const heroContent = ref(null)
+
+onMounted(() => {
+  gsap.from(heroTitle.value, {
+    y: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power4.out"
+  })
+  
+  gsap.from(heroContent.value, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.4,
+    ease: "power3.out"
+  })
+})
+</script>
+
+<template>
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="section-container hero-grid">
+      <div class="hero-text" ref="heroContent">
+        <span class="badge">🚀 Le Guide Ultime 2026</span>
+        <h1 ref="heroTitle" class="main-title">
+          Réseaux Sociaux : <br/>
+          <span class="gradient-text">Zéro à 10 000</span> Abonnés
+        </h1>
+        <p class="hero-description">
+          Le guide complet pour débutants qui veulent craquer l'algorithme et bâtir une communauté engagée en partant de rien.
+        </p>
+        <div class="hero-actions">
+          <router-link to="/reader" class="btn-primary">
+            Commencer l'aventure <Rocket :size="20" />
+          </router-link>
+          <a href="#chapters" class="btn-secondary">
+            Découvrir le plan <ChevronRight :size="20" />
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual animate-float">
+        <div class="book-mockup glass-card">
+          <img src="/images/cover.png" alt="E-book Cover" class="cover-img" />
+          <div class="glow-effect"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(45, 212, 191, 0.15) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.main-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn-secondary {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.book-mockup {
+  position: relative;
+  padding: 1rem;
+  transform: rotate(5deg);
+  transition: transform 0.5s ease;
+}
+
+.book-mockup:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.cover-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 968px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 12rem;
+  }
+  
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-visual {
+    margin-top: 4rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>

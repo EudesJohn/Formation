@@ -1,0 +1,222 @@
+
+  {
+    id: 0,
+    title: "Bienvenue à l'Élite",
+    module: "Introduction",
+    content: `
+      <div class="elite-header">
+        <div class="welcome-cover">
+          <img src="/images/cover_elite.png" alt="Elite Cover" class="reader-cover-img" />
+        </div>
+        <h1 class="luxury-title">Social Mastery <span class="gold-text">Elite</span></h1>
+        <p class="subtitle">La Masterclass définitive pour dominer l'économie de l'attention en 2026.</p>
+      </div>
+      
+      <div class="learning-objectives glass-card">
+        <h3><Award :size="20"/> Ce que vous allez accomplir :</h3>
+        <ul>
+          <li>Bâtir une marque personnelle indestructible.</li>
+          <li>Maîtriser les rouages psychologiques de la viralité.</li>
+          <li>Générer vos premiers 5 000€ de revenus récurrents.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <p>Vous n'avez pas acheté un simple livre. Vous avez investi dans un système. Ce portail interactif est conçu pour vous transformer. Ne lisez pas seulement : <strong>Agissez</strong>.</p>
+      </div>
+    `
+  },
+  {
+    id: 1,
+    title: "Chapitre 1 : L'Architecture de Marque",
+    module: "Fondations",
+    content: `
+      <h2>L'Identité de Marque en 2026</h2>
+      <p>Oubliez les logos et les couleurs. Votre marque est la promesse que vous faites à votre audience. En 2026, les gens ne suivent pas des comptes, ils suivent des <strong>Leaders d'Opinion</strong>.</p>
+      
+      <div class="case-study">
+        <h4><Lightbulb :size="18"/> Étude de Cas : La Méthode du "Mirroring"</h4>
+        <p>Découvrez comment les plus gros créateurs utilisent la vulnérabilité calculée pour créer un lien émotionnel immédiat.</p>
+      </div>
+
+      <h3>Action Steps :</h3>
+      <div class="checklist">
+        <div class="check-item"><input type="checkbox"/> Définir votre niche "Micro-Spécialisée".</div>
+        <div class="check-item"><input type="checkbox"/> Créer votre charte éditoriale unique.</div>
+        <div class="check-item"><input type="checkbox"/> Rédiger votre mission en une phrase impactante.</div>
+      </div>
+    `
+  },
+  {
+    id: 2,
+    title: "Chapitre 2 : Psychologie des Hooks",
+    module: "Fondations",
+    content: `
+      <h2>Capter l'Attention en 1.5 Seconde</h2>
+      <p>Sur TikTok ou Instagram, le combat se gagne dans les deux premières secondes. Si vous ratez le Hook, vous perdez le client. La psychologie humaine est programmée pour filtrer le bruit.</p>
+      
+      <div class="elite-box">
+        <h4>🧠 Le Biais de Nouveauté</h4>
+        <p>Le cerveau humain libère de la dopamine lorsqu'il rencontre quelque chose d'inattendu. Votre Hook doit briser le "pattern scroll" avec un visuel ou une phrase qui choque le système cognitif.</p>
+      </div>
+
+      <div class="resource-box">
+        <div class="resource-info">
+          <FileText :size="20"/> <strong>PDF :</strong> 50 Hooks Irrésistibles (Prêts à l'emploi)
+        </div>
+        <button class="btn-small" @click="window.open('https://drive.google.com/file/d/11E8yGFPpKREa5X0TjM4ys8yAVzfjo1J_/view', '_blank')">Télécharger</button>
+      </div>
+
+      <h3>Les 3 Types de Hooks Maîtres :</h3>
+      <ol>
+        <li><strong>L'Antagonisme :</strong> "Tout ce qu'on vous a dit sur [Niche] est faux."</li>
+        <li><strong>Le Résultat Improbable :</strong> "Comment j'ai fait [X] en seulement [Y] jours sans [Z]."</li>
+        <li><strong>La Peur de Manquer (FOMO) :</strong> "L'astuce secrète que 99% des créateurs ignorent."</li>
+      </ol>
+    `
+  },
+  {
+    id: 3,
+    title: "Chapitre 3 : Rétention & Storytelling",
+    module: "Contenu",
+    content: `
+      <h2>Garder votre audience captive</h2>
+      <p>Avoir l'attention est facile. La garder est le vrai talent. Le secret ? Le <strong>Looping Storytelling</strong>.</p>
+      <p>Chaque phrase doit appeler la suivante. Chaque seconde doit justifier la survie de la vidéo.</p>
+      
+      <div class="tip-box gold">
+        <strong>💡 Règle d'or :</strong> Ne donnez jamais la solution avant la fin. Maintenez la tension dramatique.
+      </div>
+    `
+  },
+  {
+    id: 4,
+    title: "Chapitre 4 : La Science du Montage",
+    module: "Contenu",
+    content: `
+      <h2>Montage "High-Retention"</h2>
+      <p>En 2026, le montage n'est pas décoratif. Il est structurel. Utilisez des "Pattern Interrupts" toutes les 3 secondes pour réinitialiser le cerveau du spectateur.</p>
+      
+      <div class="video-placeholder glass-card">
+        <PlayCircle :size="48"/>
+        <span>Vidéo démo : Pattern Interrupts</span>
+      </div>
+    `
+  },
+  {
+    id: 5,
+    title: "Chapitre 5 : L'Algorithme Quantique",
+    module: "Algorithmes",
+    content: `
+      <h2>Au-delà des Hashtags</h2>
+      <p>Les hashtags sont morts. L'algorithme lit maintenant vos images et écoute vos paroles (SEO Social). Nous allons voir comment indexer votre contenu pour qu'il apparaisse chez les bonnes personnes.</p>
+    `
+  },
+  {
+    id: 6,
+    title: "Chapitre 6 : Viralité Organique",
+    module: "Algorithmes",
+    content: `
+      <h2>Provoquer la Chance</h2>
+      <p>La viralité n'est pas un accident. C'est une combinaison de pertinence culturelle et de timing. Apprenez à identifier les "Micro-Trend" avant qu'elles n'explosent.</p>
+    `
+  },
+  {
+    id: 7,
+    title: "Chapitre 7 : Psychologie de Communauté",
+    module: "Audience",
+    content: `
+      <h2>Transformer des Abonnés en Apôtres</h2>
+      <p>Une communauté forte protège votre business. Créez des rituels, un langage propre à votre marque, et des ennemis communs.</p>
+    `
+  },
+  {
+    id: 8,
+    title: "Chapitre 8 : IA & Productivité Élite",
+    module: "Outils",
+    content: `
+      <h2>Produire 10x Plus en 10x Moins de Temps</h2>
+      <p>Utilisez l'IA non pas pour remplacer votre créativité, mais pour amplifier votre exécution. Création de scripts, montage assisté, et analyse de data prédictive.</p>
+    `
+  },
+  {
+    id: 9,
+    title: "Chapitre 9 : L'Échelle de la Monétisation",
+    module: "Business",
+    content: `
+      <h2>Vendre sans Vendre</h2>
+      <p>De l'e-book à 17€ au coaching à 5000€. Construisez votre échelle de valeur pour maximiser le LTV (Lifetime Value) de chaque abonné.</p>
+    `
+  },
+  {
+    id: 10,
+    title: "Module Bonus : L'Empire",
+    module: "Business",
+    content: `
+      <h2>Automatisation & Délégation</h2>
+      <p>Comment sortir de l'opérationnel et devenir le CEO de votre propre média. Recrutement de monteurs, gestion de communauté, et scalabilité.</p>
+      
+      <div class="cta-elite glass-card">
+        <h3>Passez à l'étape supérieure</h3>
+        <p>Rejoignez notre réseau privé de créateurs élites et accédez à nos outils exclusifs.</p>
+        <button class="btn-luxury" @click="window.open('https://fooocsof.mychariow.shop', '_blank')">Accéder à l'Espace Premium <ShoppingBag :size='18'/></button>
+      </div>
+    `
+  },
+  {
+    id: 11,
+    title: "Pack de Ressources & Bonus",
+    module: "BONUS ELITE",
+    content: `
+      <div class="bonus-header">
+        <h1 class="luxury-title"><span class="gold-text">VOS BONUS</span> EXCLUSIFS</h1>
+        <div class="warning-box">
+          <p><strong>⚠️ A LIRE AVANT DE CLIQUER :</strong></p>
+          <p>Le premier lien vous redirige vers un PDF contenant des liens et les autres vous redirigent vers Google Drive.</p>
+          <p>Dans un premier temps, vous devez télécharger le PDF. Ensuite, sur chaque page vous avez des listes sur lesquelles vous devez cliquer pour être redirigé(e).</p>
+        </div>
+      </div>
+
+      <div class="bonus-grid">
+        <div class="resource-card glass-card">
+          <h3>✅ Compte TikTok monétisé</h3>
+          <p>Accédez aux dossiers pour configurer votre compte.</p>
+          <a href="https://drive.google.com/drive/folders/1cGN31mFcRZIA9rCHzA5ksdEmpy0bWYpw" target="_blank" class="btn-bonus red">Ouvrir Google Drive</a>
+        </div>
+
+        <div class="resource-card glass-card">
+          <h3>🚨 +10 000 Vidéos TikTok</h3>
+          <p>Téléchargez le catalogue complet au format PDF.</p>
+          <a href="https://drive.google.com/file/d/11E8yGFPpKREa5X0TjM4ys8yAVzfjo1J_/view" target="_blank" class="btn-bonus yellow">Télécharger le PDF (Canva)</a>
+        </div>
+
+        <div class="resource-card glass-card">
+          <h3>🔥 +600 Réels Tendances</h3>
+          <p>Pack de vidéos virales prêtes à l'emploi.</p>
+          <a href="https://drive.google.com/drive/folders/1lFGkYkg7Yoc8F1g_1A4bQwSmGny-WrcR" target="_blank" class="btn-bonus red">Accéder aux Réels</a>
+        </div>
+
+        <div class="resource-card glass-card">
+          <h3>✨ Pack Lifestyle Premium</h3>
+          <p>Vidéos esthétiques pour vos fonds de vidéos.</p>
+          <a href="https://drive.google.com/drive/folders/1vPDxi26HoMc26uR6lqPaQUPOdHnIxIgx" target="_blank" class="btn-bonus red">Ouvrir le Pack</a>
+        </div>
+
+        <div class="resource-card glass-card">
+          <h3>🎯 300 Super Hooks</h3>
+          <p>Les accroches qui font exploser la rétention.</p>
+          <a href="https://drive.google.com/drive/folders/1y0tI1NkUtJIdVgXiE9JHnVz7sYA1lPu4" target="_blank" class="btn-bonus red">Voir les Hooks</a>
+        </div>
+
+        <div class="resource-card glass-card">
+          <h3>🚀 Booster son Live</h3>
+          <p>Guide complet pour maximiser vos sessions en direct.</p>
+          <a href="https://drive.google.com/file/d/1R9GX68m5vmMHhD22IPj9rixw78xYJnrB/view" target="_blank" class="btn-bonus red">Ouvrir le Guide</a>
+        </div>
+      </div>
+
+      <div class="tip-box gold">
+        <p><strong>💡 Note :</strong> Vous pouvez utiliser Canva ou Capcut pour modifier ces vidéos. Ajoutez simplement vos textes et votre musique pour vous démarquer !</p>
+      </div>
+    `
+  }
