@@ -2,12 +2,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 import EbookReader from '../views/EbookReader.vue'
 import ActivationView from '../views/ActivationView.vue'
 import LandingPage from '../views/LandingPage.vue'
+import QuizView from '../views/QuizView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Reader',
     component: EbookReader
+  },
+  {
+    path: '/quiz',
+    name: 'Quiz',
+    component: QuizView
   },
   {
     path: '/intro',

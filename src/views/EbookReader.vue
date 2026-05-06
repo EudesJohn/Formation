@@ -1023,6 +1023,36 @@ const chapters = ref([
         <p><strong>💡 Note :</strong> Vous pouvez utiliser Canva ou Capcut pour modifier ces vidéos. Ajoutez simplement vos textes et votre musique pour vous démarquer !</p>
       </div>
     `
+  },
+  {
+    id: 12,
+    title: "Examen de Certification Élite",
+    module: "CERTIFICATION",
+    content: `
+      <div class="elite-header">
+        <h1 class="luxury-title">L'Heure de <span class="gold-text">Vérité</span></h1>
+        <p class="subtitle">Vous avez terminé la théorie. Il est temps de valider vos compétences.</p>
+      </div>
+
+      <div class="glass-card quiz-promo">
+        <div class="icon-header">
+          <div class="brain-circle">
+            <Brain :size="48" class="gold-text" />
+          </div>
+        </div>
+        <h3>Prêt pour l'Examen Final ?</h3>
+        <p>Répondez aux questions stratégiques pour tester votre niveau de maîtrise. Si vous obtenez 100%, vous êtes prêt à conquérir les réseaux.</p>
+        
+        <router-link to="/quiz" class="btn-luxury">
+          Lancer le Quiz Interactif <Zap :size="20" />
+        </router-link>
+      </div>
+
+      <div class="elite-box">
+        <h4>Pourquoi passer le test ?</h4>
+        <p>Un bon créateur ne se contente pas de regarder. Il comprend les mécaniques psychologiques. Ce quiz vous forcera à réfléchir comme un expert.</p>
+      </div>
+    `
   },])
 
 const activeChapter = computed(() => chapters.value[currentChapter.value] || chapters.value[0])
