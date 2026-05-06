@@ -1190,8 +1190,11 @@ onMounted(() => {
 .sidebar.closed { width: 0; transform: translateX(-100%); }
 
 .sidebar-header {
-  padding: 3rem 2rem;
+  padding: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
@@ -1599,22 +1602,24 @@ onMounted(() => {
 
 @media (max-width: 640px) {
   .sidebar { width: 100%; }
-  .luxury-title { font-size: 2.2rem; }
-  .subtitle { font-size: 1.1rem; margin-bottom: 3rem; }
-  .rich-elite-content :deep(h2) { font-size: 1.8rem; }
-  .rich-elite-content :deep(p) { font-size: 1rem; line-height: 1.7; }
-  .nav-controls { flex-direction: column; gap: 1rem; align-items: stretch; margin-top: 4rem; }
+  .content-body { padding: 1.5rem 1rem; }
+  .luxury-title { font-size: 2rem; text-align: center; }
+  .subtitle { font-size: 1.1rem; margin-bottom: 2rem; text-align: center; }
+  .rich-elite-content :deep(h2) { font-size: 1.6rem; }
+  .rich-elite-content :deep(p) { font-size: 1rem; line-height: 1.6; }
+  .nav-controls { flex-direction: column; gap: 1rem; align-items: stretch; margin-top: 3rem; }
   .elite-btn-prev, .elite-btn-next, .elite-btn-final { 
     width: 100%; 
     justify-content: center; 
-    padding: 1.2rem;
+    padding: 1rem;
     font-size: 0.8rem;
   }
   .progress-box { width: 100px; }
   .progress-percent { font-size: 0.7rem; }
-  .elite-box { padding: 1.5rem !important; border-radius: 16px; }
+  .elite-box { padding: 1.5rem !important; border-radius: 16px; margin: 1.5rem 0 !important; }
   .bonus-grid { grid-template-columns: 1fr; }
-  .reader-cover-img { max-width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-  .welcome-cover { padding: 0; margin-bottom: 2rem; }
+  .welcome-cover { text-align: center; margin-bottom: 1.5rem; }
+  .reader-cover-img { max-width: 250px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); display: inline-block; }
+  .glass-card { padding: 1.5rem; margin: 2rem 0; border-radius: 20px; }
 }
 </style>
