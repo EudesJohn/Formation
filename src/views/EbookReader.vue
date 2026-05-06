@@ -1546,19 +1546,43 @@ onMounted(() => {
 .close-mobile { display: none; margin-right: -1rem; }
 
 @media (max-width: 1024px) {
-  .sidebar { position: absolute; height: 100%; z-index: 1000; box-shadow: 50px 0 100px rgba(0,0,0,0.9); }
+  .sidebar { 
+    position: fixed; 
+    height: 100vh; 
+    z-index: 1000; 
+    box-shadow: 50px 0 100px rgba(0,0,0,0.9); 
+    width: 320px;
+  }
   .close-mobile { display: flex; }
   .content-header { padding: 1rem; margin: 1rem; border-radius: 20px !important; }
-  .glass-card { padding: 1.5rem; margin: 2rem 0; border-radius: 24px; }
-  .content-body { padding: 2rem 1.5rem; }
-  .luxury-title { font-size: 3rem; }
-  .rich-elite-content :deep(h2) { font-size: 2.2rem; }
-  .resource-card { padding: 2rem !important; border-radius: 24px !important; }
+  .header-left { gap: 1rem; }
+  .breadcrumb { display: none; }
+  .progress-box { width: 140px; }
+  .glass-card { padding: 2rem; margin: 2rem 0; border-radius: 30px; }
+  .content-body { padding: 3rem 1.5rem; }
+  .luxury-title { font-size: 2.5rem; }
+  .rich-elite-content :deep(h2) { font-size: 2rem; margin-bottom: 1.5rem; }
+  .rich-elite-content :deep(p) { font-size: 1.1rem; line-height: 1.8; }
+  .resource-card { padding: 2rem !important; border-radius: 30px !important; }
+  .reader-cover-img { border-radius: 24px; }
 }
 
 @media (max-width: 640px) {
-  .nav-controls { flex-direction: column; align-items: center; }
-  .elite-btn-prev, .elite-btn-next, .elite-btn-final { width: 100%; justify-content: center; text-align: center; }
-  .progress-box { width: 150px; }
+  .sidebar { width: 100%; }
+  .luxury-title { font-size: 2.2rem; }
+  .subtitle { font-size: 1.1rem; margin-bottom: 3rem; }
+  .rich-elite-content :deep(h2) { font-size: 1.8rem; }
+  .rich-elite-content :deep(p) { font-size: 1rem; line-height: 1.7; }
+  .nav-controls { flex-direction: column; gap: 1rem; align-items: stretch; margin-top: 4rem; }
+  .elite-btn-prev, .elite-btn-next, .elite-btn-final { 
+    width: 100%; 
+    justify-content: center; 
+    padding: 1.2rem;
+    font-size: 0.8rem;
+  }
+  .progress-box { width: 100px; }
+  .progress-percent { font-size: 0.7rem; }
+  .elite-box { padding: 1.5rem !important; border-radius: 16px; }
+  .bonus-grid { grid-template-columns: 1fr; }
 }
 </style>

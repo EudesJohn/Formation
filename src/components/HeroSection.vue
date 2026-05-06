@@ -163,7 +163,9 @@ onMounted(() => {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 12rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
   }
   
   .hero-text {
@@ -173,12 +175,18 @@ onMounted(() => {
   }
   
   .main-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
   
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
   }
   
   .btn-primary {
@@ -187,10 +195,16 @@ onMounted(() => {
   }
   
   .hero-visual {
-    margin-top: 4rem;
-    max-width: 400px;
+    margin-top: 2rem;
+    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
   }
 }
 </style>

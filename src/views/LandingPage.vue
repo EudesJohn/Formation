@@ -115,9 +115,33 @@ onMounted(() => {
   font-size: 0.9rem;
 }
 
-@media (max-width: 640px) {
-  .nav-links a:not(.btn-primary) {
+@media (max-width: 768px) {
+  .navbar {
+    top: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links button:not(.mini) {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+  
+  .btn-primary.mini {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
   }
 }
 </style>

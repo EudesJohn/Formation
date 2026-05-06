@@ -170,10 +170,23 @@ onMounted(() => {
 }
 
 @media (max-width: 968px) {
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .chapters-grid {
+    gap: 3rem;
+  }
+
   .chapter-card {
     grid-template-columns: 1fr;
     padding: 2rem;
     gap: 2rem;
+    border-radius: 30px;
   }
   
   .chapter-card.reverse {
@@ -182,6 +195,16 @@ onMounted(() => {
   
   .chapter-image {
     order: -1;
+  }
+
+  .chapter-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.8rem;
   }
 }
 </style>
