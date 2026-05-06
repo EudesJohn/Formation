@@ -1551,11 +1551,12 @@ onMounted(() => {
     height: 100vh; 
     z-index: 1000; 
     box-shadow: 50px 0 100px rgba(0,0,0,0.9); 
-    width: 320px;
+    width: 300px; /* Ségèrement plus étroit */
   }
   .close-mobile { display: flex; }
-  .content-header { padding: 1rem; margin: 1rem; border-radius: 20px !important; }
-  .header-left { gap: 1rem; }
+  .content-header { padding: 0.8rem 1.2rem; margin: 0.8rem; border-radius: 100px !important; }
+  .header-left { gap: 0.8rem; }
+  .menu-toggle { width: 40px; height: 40px; } /* Plus compact */
   .breadcrumb { display: none; }
   .progress-box { width: 140px; }
   .glass-card { padding: 2rem; margin: 2rem 0; border-radius: 30px; }
