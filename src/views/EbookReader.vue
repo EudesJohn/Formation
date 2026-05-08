@@ -63,7 +63,7 @@ const chapters = ref([
         <p>Tu n’as pas besoin d’être intelligent. Tu n’as pas besoin d’être créatif.</p>
         <p><strong>Tu dois juste être actif.</strong></p>
 
-        <p>Regarde autour de toi. Des gens comme toi réussissent déjà. Ils ne sont pas différents. Ils ont juste commencé. And ils ont continué.</p>
+        <p>Regarde autour de toi. Des gens comme toi réussissent déjà. Ils ne sont pas différents. Ils ont juste commencé. Et ils ont continué.</p>
       </div>
 
       <div class="learning-objectives glass-card">
@@ -141,7 +141,7 @@ const chapters = ref([
           <li>Découvrir des choses</li>
         </ul>
         <p>Exemples : TikTok, Instagram, Facebook, YouTube.</p>
-        <p>Mais derrière ces applications, il y a une reality très importante :</p>
+        <p>Mais derrière ces applications, il y a une réalité très importante :</p>
         <div class="elite-box" style="margin-top: 2rem;">
           <p>👉 Ce ne sont pas juste des applications.<br>👉 Ce sont des <strong>machines à attention</strong>.</p>
         </div>
@@ -293,12 +293,7 @@ const chapters = ref([
       <div class="tip-box gold">
         <h2>1.19 — Exercice simple (TRÈS IMPORTANT)</h2>
         <p>Aujourd’hui :</p>
-        <ol style="text-align: left; display: inline-block; margin: 1rem 0;">
-          <li>Ouvre TikTok</li>
-          <li>Regarde 10 vidéos</li>
-          <li>Note ce que tu comprends</li>
-        </ol>
-        <p>👉 C’est comme ça que tu apprends.</p>
+        <p>Ouvre TikTok, regarde 10 vidéos et note ce que tu comprends. C’est comme ça que tu apprends.</p>
       </div>
 
       <div class="elite-box">
@@ -685,7 +680,7 @@ const chapters = ref([
 
       <div class="content-block">
         <h2>5.27 — Le Rythme Elite</h2>
-        <p>La constance est la clé. Poste 1 à 3 vidéos par jour pour maximiser tes chances de viralité.</p>
+        <p>La constance est la clé. Poste 1 à 3 vidéos par jour pour maximiser tes chances de viralité. </p>
         <div class="tip-box gold">
           <p>💡 <strong>Le volume bat la perfection.</strong> Tu apprends en postant. Tes premières vidéos ne seront pas parfaites, et c'est normal. Continue.</p>
         </div>
@@ -846,7 +841,7 @@ const chapters = ref([
           <li>Bâtir une communauté fidèle.</li>
           <li>Monétiser ton influence.</li>
         </ul>
-        <p>👉 <strong>Commence aujourd'hui.</strong> Tu n’as pas besoin d’être parfait, tu dois juste AGIR.</p>
+        <p>👉 <strong>Commence aujourd'hui.</strong> Tu n’as pas besoin d’être parfait, tu dois juste AGIR. </p>
       </div>
 
       <div class="bonus-box" style="text-align: center; margin-top: 4rem;">
@@ -901,7 +896,7 @@ const chapters = ref([
 
       <div class="content-block">
         <h2>Imagine ton futur</h2>
-        <p>Imagine dans 30 jours, 3 mois, 6 mois... Ton compte grandit, les gens te suivent, tu commences à gagner de l'argent. Ce n'est pas un rêve, c'est un résultat mathématique de la constance.</p>
+        <p>Imagine dans 30 jours, 3 mois, 6 mois... Ton compte grandit, les gens te suivent, tu commences à gagner de l'argent. Ce n'est pas un rêve, c'est un résultat mathématique de la constance. </p>
         <p>Ne cherche pas la perfection, cherche le progrès. Une vidéo aujourd’hui vaut mieux que 10 idées demain. Le bon moment, c’est <strong>maintenant</strong>.</p>
       </div>
 
