@@ -2,30 +2,61 @@
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Target, Users, Zap, DollarSign, CheckCircle } from 'lucide-vue-next'
+import { Target, Users, Zap, DollarSign, CheckCircle, BookOpen, Smartphone, UserCheck, Video } from 'lucide-vue-next'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const chapters = [
   {
-    title: "Chapitre 1 — Choisir LA bonne plateforme",
+    title: "Introduction — Le Monde en 2026",
+    description: "Comprenez pourquoi les réseaux sociaux sont devenus la plus grande opportunité de notre époque et comment en tirer profit dès maintenant.",
+    icon: BookOpen,
+    image: "/images/intro_2026.png"
+  },
+  {
+    title: "Chapitre 1 — Comprendre les réseaux sociaux",
+    description: "Plongez dans les mécaniques psychologiques de l'économie de l'attention. Apprenez ce qui fait vraiment rester les gens sur une application.",
+    icon: Smartphone,
+    image: "/images/social_foundations.png"
+  },
+  {
+    title: "Chapitre 2 — Stratégie & Plateformes",
     description: "Instagram, TikTok, LinkedIn... Ne vous dispersez pas. Apprenez à identifier où se trouve votre audience cible en 2026.",
     icon: Target,
     image: "/images/strategy.png"
   },
   {
+    title: "Chapitre 3 — Créer un profil qui attire",
+    description: "Votre profil est votre vitrine. Optimisez chaque élément pour transformer un simple visiteur en abonné fidèle en moins de 3 secondes.",
+    icon: UserCheck,
+    image: "/images/profile_optimization.png"
+  },
+  {
     title: "Chapitre 4 — Les secrets de l'algorithme",
-    description: "L'algorithme n'est pas votre ennemi. Découvrez comment transformer la data en visibilité organique.",
+    description: "L'algorithme n'est pas votre ennemi. Découvrez comment transformer la data en visibilité organique massive.",
     icon: Zap,
     image: "/images/algorithm.png"
   },
   {
+    title: "Chapitre 5 — Contenu Viral sans Budget",
+    description: "Pas besoin de matériel coûteux. Maîtrisez l'art de la création de contenu percutant avec un simple téléphone.",
+    icon: Video,
+    image: "/images/viral_content.png"
+  },
+  {
+    title: "Chapitre 6 — Construire une Communauté",
+    description: "Transformez vos chiffres en humains engagés. Les stratégies pour bâtir une confiance indestructible avec votre audience.",
+    icon: Users,
+    image: "/images/community_building.png"
+  },
+  {
     title: "Chapitre 7 — Monétiser ses réseaux",
-    description: "Les 5 méthodes concrètes pour transformer vos abonnés en clients fidèles, même avec une petite audience.",
+    description: "Les 5 méthodes concrètes pour transformer vos abonnés en clients fidèles et générer des revenus récurrents.",
     icon: DollarSign,
     image: "/images/monetization.png"
   }
 ]
+
 
 const chapterRefs = ref([])
 

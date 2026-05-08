@@ -14,33 +14,6 @@ const contentBody = ref(null)
 const chapters = ref([
   {
     id: 0,
-    title: "Bienvenue à l'Élite",
-    module: "Introduction",
-    content: `
-      <div class="elite-header">
-        <div class="welcome-cover">
-          <img src="/images/cover_elite.png" alt="Elite Cover" class="reader-cover-img" />
-        </div>
-        <h1 class="luxury-title">Social Mastery <span class="gold-text">Elite</span></h1>
-        <p class="subtitle">La Masterclass définitive pour dominer l'économie de l'attention en 2026.</p>
-      </div>
-      
-      <div class="learning-objectives glass-card">
-        <h3><Award :size="20"/> Ce que vous allez accomplir :</h3>
-        <ul>
-          <li>Bâtir une marque personnelle indestructible.</li>
-          <li>Maîtriser les rouages psychologiques de la viralité.</li>
-          <li>Générer vos premiers 5 000€ de revenus récurrents.</li>
-        </ul>
-      </div>
-
-      <div class="content-block">
-        <p>Vous n'avez pas acheté un simple livre. Vous avez investi dans un système. Ce portail interactif est conçu pour vous transformer. Ne lisez pas seulement : <strong>Agissez</strong>.</p>
-      </div>
-    `
-  },
-  {
-    id: 1,
     title: "Introduction : Le Monde en 2026",
     module: "Introduction",
     content: `
@@ -90,7 +63,7 @@ const chapters = ref([
         <p>Tu n’as pas besoin d’être intelligent. Tu n’as pas besoin d’être créatif.</p>
         <p><strong>Tu dois juste être actif.</strong></p>
 
-        <p>Regarde autour de toi. Des gens comme toi réussissent déjà. Ils ne sont pas différents. Ils ont juste commencé. Et ils ont continué.</p>
+        <p>Regarde autour de toi. Des gens comme toi réussissent déjà. Ils ne sont pas différents. Ils ont juste commencé. And ils ont continué.</p>
       </div>
 
       <div class="learning-objectives glass-card">
@@ -146,10 +119,10 @@ const chapters = ref([
         <p>Les réseaux sociaux peuvent changer ta vie. Mais seulement si tu les utilises correctement.</p>
         <p><strong>Et c’est exactement ce que tu vas apprendre ici.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 2,
+    id: 1,
     title: "Chapitre 1 : Comprendre les réseaux sociaux",
     module: "Fondations",
     content: `
@@ -168,7 +141,7 @@ const chapters = ref([
           <li>Découvrir des choses</li>
         </ul>
         <p>Exemples : TikTok, Instagram, Facebook, YouTube.</p>
-        <p>Mais derrière ces applications, il y a une réalité très importante :</p>
+        <p>Mais derrière ces applications, il y a une reality très importante :</p>
         <div class="elite-box" style="margin-top: 2rem;">
           <p>👉 Ce ne sont pas juste des applications.<br>👉 Ce sont des <strong>machines à attention</strong>.</p>
         </div>
@@ -341,10 +314,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>Comment choisir la bonne plateforme et commencer intelligemment.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 3,
+    id: 2,
     title: "Chapitre 2 : Stratégie & Plateformes",
     module: "Fondations",
     content: `
@@ -440,10 +413,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>L'Architecture de Marque : Bâtir une identité indestructible.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 4,
+    id: 3,
     title: "Chapitre 3 : Créer un profil qui attire et qui convertit",
     module: "Fondations",
     content: `
@@ -550,10 +523,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>Créer du contenu qui devient viral.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 5,
+    id: 4,
     title: "Chapitre 4 : L'Algorithme & La Viralité",
     module: "Fondations",
     content: `
@@ -650,10 +623,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>Créer du contenu viral sans budget.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 6,
+    id: 5,
     title: "Chapitre 5 : Créer du contenu viral sans budget",
     module: "Contenu",
     content: `
@@ -673,7 +646,7 @@ const chapters = ref([
 
       <div class="glass-card">
         <h2>5.7 — Le Recyclage Intelligent</h2>
-        <p>Tu n’as pas besoin de tout créer de zéro. Tu peux recycler ce qui marche déjà.</p>
+        <p>Tu n’as pas besoin de tout créer de zéro. Tu peux recycler ce qui marche déjà. </p>
         <p>👉 Trouve une vidéo virale, change le texte, apporte ta propre valeur et reposte. <strong>N'oublie pas : Améliore, ne copie pas bêtement.</strong></p>
       </div>
 
@@ -735,10 +708,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>Construire une communauté engagée.</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 7,
+    id: 6,
     title: "Chapitre 6 : Construire une communauté engagée",
     module: "Audience",
     content: `
@@ -810,10 +783,10 @@ const chapters = ref([
         <p>👉 Dans le prochain chapitre, tu vas apprendre :</p>
         <p><strong>Monétiser ses réseaux (Gagner de l'argent).</strong></p>
       </div>
-`
+    `
   },
   {
-    id: 8,
+    id: 7,
     title: "Chapitre 7 : Monétiser ses réseaux",
     module: "Business",
     content: `
@@ -881,10 +854,10 @@ const chapters = ref([
         <p>Mais ce n'est que le début de ton aventure.</p>
         <p>Passe maintenant aux <strong>Modules Bonus</strong> et au <strong>Pack de Ressources</strong> pour accélérer tes résultats.</p>
       </div>
-`
+    `
   },
   {
-    id: 9,
+    id: 8,
     title: "Conclusion : Ton nouveau départ",
     module: "Conclusion",
     content: `
@@ -944,10 +917,10 @@ const chapters = ref([
         <h3 class="gold-text">BIENVENUE DANS L'ÉLITE.</h3>
         <p>On se retrouve de l'autre côté.</p>
       </div>
-`
+    `
   },
   {
-    id: 10,
+    id: 9,
     title: "Module Bonus : L'Empire",
     module: "Business",
     content: `
@@ -962,7 +935,7 @@ const chapters = ref([
     `
   },
   {
-    id: 11,
+    id: 10,
     title: "Pack de Ressources & Bonus",
     module: "BONUS ELITE",
     content: `
@@ -1025,7 +998,7 @@ const chapters = ref([
     `
   },
   {
-    id: 12,
+    id: 11,
     title: "Examen de Certification Élite",
     module: "CERTIFICATION",
     content: `
@@ -1053,7 +1026,9 @@ const chapters = ref([
         <p>Un bon créateur ne se contente pas de regarder. Il comprend les mécaniques psychologiques. Ce quiz vous forcera à réfléchir comme un expert.</p>
       </div>
     `
-  },])
+  },
+])
+
 
 const activeChapter = computed(() => chapters.value[currentChapter.value] || chapters.value[0])
 
@@ -1592,46 +1567,106 @@ onMounted(() => {
     position: fixed; 
     height: 100vh; 
     z-index: 1000; 
-    box-shadow: 50px 0 100px rgba(0,0,0,0.9); 
-    width: 300px; /* Ségèrement plus étroit */
+    box-shadow: 20px 0 60px rgba(0,0,0,0.8); 
+    width: 320px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
   }
-  .close-mobile { display: flex; }
-  .content-header { padding: 0.8rem 1.2rem; margin: 0.8rem; border-radius: 100px !important; }
+  .close-mobile { 
+    display: flex; 
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    z-index: 10;
+  }
+  .sidebar-header {
+    padding: 1.5rem;
+    padding-top: 2rem;
+    position: relative;
+  }
+  .content-header { 
+    padding: 0.8rem 1.2rem; 
+    margin: 0.8rem; 
+    border-radius: 100px !important; 
+    background: rgba(20, 20, 20, 0.6);
+  }
   .header-left { gap: 0.8rem; }
-  .menu-toggle { width: 40px; height: 40px; } /* Plus compact */
+  .menu-toggle { width: 44px; height: 44px; }
   .breadcrumb { display: none; }
-  .progress-box { width: 140px; }
-  .glass-card { padding: 2rem; margin: 2rem 0; border-radius: 30px; }
-  .content-body { padding: 3rem 1.5rem; }
-  .luxury-title { font-size: 2.5rem; }
-  .rich-elite-content :deep(h2) { font-size: 2rem; margin-bottom: 1.5rem; }
-  .rich-elite-content :deep(p) { font-size: 1.1rem; line-height: 1.8; }
-  .resource-card { padding: 2rem !important; border-radius: 30px !important; }
-  .reader-cover-img { border-radius: 24px; }
+  .progress-box { width: 130px; }
+  .glass-card { padding: 1.5rem; margin: 1.5rem 0; border-radius: 24px; }
+  .content-body { padding: 2rem 1rem; }
+  .luxury-title { font-size: 2.8rem; line-height: 1.2; }
+  .rich-elite-content :deep(h2) { font-size: 2rem; margin-bottom: 1.2rem; }
+  .rich-elite-content :deep(p) { font-size: 1.1rem; line-height: 1.7; }
+  .resource-card { padding: 1.5rem !important; border-radius: 24px !important; }
+  .reader-cover-img { border-radius: 20px; max-width: 300px; }
 }
 
+
+
 @media (max-width: 640px) {
-  .sidebar { width: 100%; }
-  .content-body { padding: 1.5rem 1rem; }
-  .luxury-title { font-size: 2rem; text-align: center; }
-  .subtitle { font-size: 1.1rem; margin-bottom: 2rem; text-align: center; }
-  .rich-elite-content :deep(h2) { font-size: 1.6rem; }
-  .rich-elite-content :deep(p) { font-size: 1rem; line-height: 1.6; }
-  .nav-controls { flex-direction: column; gap: 1rem; align-items: stretch; margin-top: 3rem; }
+  .sidebar { 
+    width: 85%; 
+    max-width: 300px;
+    border-right: 1px solid rgba(212, 175, 55, 0.1);
+  }
+  .sidebar-scroll { padding: 1rem 0.25rem; }
+  .module-title { padding-left: 0.75rem; font-size: 0.65rem; }
+  .chapter-link { padding: 0.75rem 0.75rem; font-size: 0.85rem; }
+  
+  .content-body { padding: 1.25rem 0.75rem; }
+  .luxury-title { font-size: 2.2rem; text-align: center; word-wrap: break-word; margin-bottom: 0.5rem; }
+  .subtitle { font-size: 1rem; margin-bottom: 2rem; text-align: center; line-height: 1.4; }
+  
+  .rich-elite-content :deep(h2) { font-size: 1.6rem; text-align: center; line-height: 1.3; }
+  .rich-elite-content :deep(p) { font-size: 1rem; line-height: 1.6; text-align: left; }
+  .rich-elite-content :deep(ul) { padding-left: 1rem; margin: 1rem 0; }
+  .rich-elite-content :deep(li) { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  
+  .nav-controls { flex-direction: column; gap: 0.75rem; align-items: stretch; margin-top: 2.5rem; padding-bottom: 3rem; }
   .elite-btn-prev, .elite-btn-next, .elite-btn-final { 
     width: 100%; 
     justify-content: center; 
-    padding: 1rem;
-    font-size: 0.8rem;
+    padding: 0.85rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
   }
-  .progress-box { width: 100px; }
-  .progress-percent { font-size: 0.7rem; }
-  .elite-box { padding: 1.5rem !important; border-radius: 16px; margin: 1.5rem 0 !important; }
-  .bonus-grid { grid-template-columns: 1fr; }
-  .welcome-cover { text-align: center; margin-bottom: 1.5rem; }
-  .reader-cover-img { max-width: 250px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); display: inline-block; }
-  .glass-card { padding: 1.5rem; margin: 2rem 0; border-radius: 20px; }
   
+  .progress-box { width: 80px; gap: 0.5rem; }
+  .progress-percent { font-size: 0.65rem; }
+  .elite-box { padding: 1.2rem !important; border-radius: 16px; margin: 1.2rem 0 !important; }
+  .bonus-grid { grid-template-columns: 1fr; gap: 1rem; }
+  
+  .welcome-cover { text-align: center; margin-bottom: 1.5rem; margin-top: 0; }
+  .reader-cover-img { max-width: 180px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+  
+  .glass-card { padding: 1.2rem; margin: 1.2rem 0; border-radius: 20px; }
+  .learning-objectives h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .learning-objectives ul { text-align: left !important; padding-left: 0.25rem; font-size: 0.9rem !important; }
+  .learning-objectives li { margin-bottom: 0.4rem !important; }
+  
+  /* Sidebar overlay backdrop when open */
+  .elite-layout::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  
+  .elite-layout:has(.sidebar:not(.closed))::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   /* Disable hover transforms on mobile to fix double-tap issue */
   .chapter-link:hover { transform: none !important; }
   .luxury-footer-btn:hover { transform: none !important; }
@@ -1639,4 +1674,6 @@ onMounted(() => {
   .elite-btn-prev:hover, .elite-btn-next:hover, .elite-btn-final:hover { transform: none !important; }
   .btn-small:hover, .btn-luxury:hover, .btn-bonus:hover { transform: none !important; }
 }
+
+
 </style>

@@ -175,13 +175,16 @@ onMounted(() => {
   }
   
   .main-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
 
   .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
+    padding: 0 1rem;
   }
+
   
   .hero-actions {
     flex-direction: column;
@@ -204,7 +207,15 @@ onMounted(() => {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+  .hero-actions {
+    gap: 0.75rem;
+  }
+  .btn-primary {
+    padding: 1rem;
+    font-size: 0.95rem;
   }
 }
+
 </style>
