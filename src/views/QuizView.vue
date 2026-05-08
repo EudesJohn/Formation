@@ -430,10 +430,19 @@ const getVerdict = () => {
 .share-box { font-size: 0.85rem; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
 
 @media (max-width: 640px) {
-  .quiz-card { padding: 1.5rem; }
-  .luxury-title { font-size: 1.8rem; }
-  .question-text { font-size: 1.4rem; }
-  .quiz-info-grid { grid-template-columns: 1fr; }
-  .results-actions { flex-direction: column; }
+  .quiz-layout { padding: 1rem; }
+  .quiz-card { padding: 1.5rem; border-radius: 24px; }
+  .luxury-title { font-size: 1.8rem; line-height: 1.2; }
+  .question-text { font-size: 1.3rem; margin-bottom: 2rem; }
+  .quiz-info-grid { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem; }
+  .results-actions { flex-direction: column; gap: 1rem; }
+  .option-btn { padding: 1rem; font-size: 0.95rem; gap: 1rem; border-radius: 16px; }
+  .option-index { width: 28px; height: 28px; font-size: 0.75rem; }
+  .final-score { font-size: 3rem; }
+  .verdict-title { font-size: 1.8rem; margin: 1rem 0; }
+  .verdict-msg { font-size: 1rem; margin-bottom: 2rem; }
+  .back-link { margin-top: 1.5rem; font-size: 0.85rem; }
+  
+  .watermark-overlay { opacity: 0.03; font-size: 8px; }
 }
 </style>

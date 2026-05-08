@@ -224,4 +224,14 @@ const handleActivation = () => {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+@media (max-width: 640px) {
+  .activation-container { padding: 1.25rem; }
+  .activation-card { padding: 2rem 1.5rem; border-radius: 24px; }
+  .luxury-title { font-size: 1.6rem; }
+  .subtitle { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .elite-input { padding: 0.85rem; font-size: 0.95rem; }
+  .lock-circle { width: 64px; height: 64px; }
+  .lock-circle svg { width: 24px; height: 24px; }
+}
 </style>
