@@ -1281,7 +1281,7 @@ onMounted(() => {
 .breadcrumb { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; font-weight: 600; color: #555; }
 .module-name { color: #D4AF37; text-transform: uppercase; }
 
-.progress-box { display: flex; align-items: center; gap: 1rem; width: 250px; }
+.progress-box { display: flex; align-items: center; gap: 1rem; width: 250px; flex-shrink: 0; min-width: 0; }
 .progress-bar-container { flex-grow: 1; height: 4px; background: #222; border-radius: 10px; overflow: hidden; }
 .progress-bar-fill { height: 100%; background: #D4AF37; border-radius: 10px; transition: width 1s cubic-bezier(0.16, 1, 0.3, 1); }
 .progress-percent { font-size: 0.8rem; font-weight: 800; color: #D4AF37; }
@@ -1696,6 +1696,34 @@ onMounted(() => {
   .btn-small:hover, .btn-luxury:hover, .btn-bonus:hover { transform: none !important; }
 }
 
+/* Resource grid inline style responsive */
+.rich-elite-content :deep(.resource-grid) {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .rich-elite-content :deep(.resource-grid) {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Inline checklist ul/ol overflow fix */
+.rich-elite-content :deep(ul),
+.rich-elite-content :deep(ol) {
+  max-width: 100%;
+  padding-left: 1.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.rich-elite-content :deep(li) {
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
 /* Très petits écrans (375px et moins) */
 @media (max-width: 375px) {
   .sidebar { width: 88%; max-width: 260px; }
@@ -1733,6 +1761,59 @@ onMounted(() => {
 
   .chapter-link { min-height: 44px; }
   .luxury-footer-btn { min-height: 52px; }
+}
+
+/* Ultra petit écrans (360px et moins) */
+@media (max-width: 360px) {
+  .sidebar { width: 88%; max-width: 240px; }
+  .sidebar-header { padding: 0.85rem; }
+  .sidebar-scroll { padding: 0.5rem 0; }
+  .chapter-link { padding: 0.5rem 0.6rem; font-size: 0.78rem; min-height: 42px; gap: 0.6rem; }
+  .sidebar-footer { padding: 1rem; }
+  .luxury-footer-btn { padding: 0.85rem; font-size: 0.7rem; min-height: 48px; }
+  .logo { font-size: 0.9rem; }
+
+  .content-header { padding: 0.5rem 0.75rem; margin: 0.35rem; border-radius: 40px !important; }
+  .menu-toggle { width: 36px; height: 36px; }
+  .menu-toggle svg { width: 18px; height: 18px; }
+  .header-left { gap: 0.5rem; }
+  .progress-box { width: 50px; gap: 0.3rem; }
+  .progress-percent { font-size: 0.6rem; }
+
+  .content-body { padding: 0.75rem 0.4rem; }
+  .content-container { padding: 0; }
+
+  .luxury-title { font-size: 1.4rem; }
+  .subtitle { font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.3; }
+
+  .rich-elite-content :deep(h2) { font-size: 1.15rem; margin-bottom: 0.75rem; }
+  .rich-elite-content :deep(p) { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.85rem; }
+  .rich-elite-content :deep(li) { font-size: 0.82rem; }
+
+  .glass-card { padding: 0.75rem; margin: 0.75rem 0; border-radius: 14px; }
+  .elite-box { padding: 0.85rem !important; border-radius: 12px; margin: 0.75rem 0 !important; }
+
+  .check-item { font-size: 0.8rem; gap: 0.5rem; }
+  .check-item input { width: 16px; height: 16px; }
+
+  .resource-card { padding: 1rem !important; border-radius: 16px !important; }
+  .resource-card h3 { font-size: 1rem; }
+  .resource-card p { font-size: 0.8rem !important; }
+
+  .warning-box { padding: 1rem; border-radius: 16px; }
+  .reader-cover-img { max-width: 120px; }
+
+  .elite-btn-prev, .elite-btn-next, .elite-btn-final {
+    padding: 0.7rem;
+    font-size: 0.78rem;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+
+  .nav-controls { margin-top: 1.5rem; padding-bottom: 2rem; gap: 0.5rem; }
+  .chapter-link { min-height: 40px; }
+  .luxury-footer-btn { min-height: 48px; }
+  .bonus-grid { gap: 0.75rem; }
 }
 
 

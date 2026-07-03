@@ -12,7 +12,7 @@
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,6 +20,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -27,9 +30,13 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   line-height: 1.6;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 
   /* Protection Anti-Vol (sélective — le reader aura user-select: text) */
   -webkit-user-select: none;
@@ -43,6 +50,19 @@ body {
 input, textarea {
   user-select: auto !important;
   -webkit-user-select: auto !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+}
+
+button {
+  max-width: 100%;
 }
 
 /* Respecter les préférences de mouvement réduit */
@@ -92,12 +112,22 @@ h1, h2, h3 {
   border: 1px solid var(--glass-border);
   border-radius: 40px;
   box-shadow: var(--glass-shadow);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 480px) {
   .glass-card {
     padding: 1.5rem;
     border-radius: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .glass-card {
+    padding: 1.2rem;
+    border-radius: 20px;
   }
 }
 
@@ -135,6 +165,25 @@ h1, h2, h3 {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   min-height: 52px;
   min-width: 52px;
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-primary {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
 }
 
 .btn-primary::before {
@@ -180,6 +229,8 @@ h1, h2, h3 {
   text-decoration: none;
   box-shadow: 0 6px 15px rgba(124, 58, 237, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .btn-small:hover {
@@ -242,11 +293,29 @@ h1, h2, h3 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 52px;
   min-width: 52px;
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
 }
 
 .btn-luxury:hover {
   transform: translateY(-3px) scale(1.04);
   box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 480px) {
+  .btn-luxury {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-luxury {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    min-height: 48px;
+  }
 }
 
 /* Mini primary button already defined */
@@ -268,6 +337,8 @@ h1, h2, h3 {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   min-height: 52px;
   min-width: 52px;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .btn-secondary:hover {
@@ -279,6 +350,20 @@ h1, h2, h3 {
 
 .btn-secondary:active {
   transform: translateY(0) scale(0.99);
+}
+
+@media (max-width: 480px) {
+  .btn-secondary {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-secondary {
+    padding: 0.75rem 1.25rem;
+    min-height: 48px;
+  }
 }
 
 /* Pink accent button */
@@ -300,6 +385,8 @@ h1, h2, h3 {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   min-height: 52px;
   min-width: 52px;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .btn-pink:hover {
@@ -309,6 +396,20 @@ h1, h2, h3 {
 
 .btn-pink:active {
   transform: translateY(0) scale(0.99);
+}
+
+@media (max-width: 480px) {
+  .btn-pink {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-pink {
+    padding: 0.75rem 1.25rem;
+    min-height: 48px;
+  }
 }
 
 /* Glass button variant */
@@ -330,6 +431,8 @@ h1, h2, h3 {
   transition: background 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   min-height: 52px;
   min-width: 52px;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .btn-glass:hover {
@@ -342,10 +445,26 @@ h1, h2, h3 {
   transform: translateY(0) scale(0.99);
 }
 
+@media (max-width: 480px) {
+  .btn-glass {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn-glass {
+    padding: 0.75rem 1.25rem;
+    min-height: 48px;
+  }
+}
+
 .section-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 8rem 2rem;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -360,6 +479,12 @@ h1, h2, h3 {
   }
 }
 
+@media (max-width: 360px) {
+  .section-container {
+    padding: 2rem 0.75rem;
+  }
+}
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -368,4 +493,18 @@ h1, h2, h3 {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none !important;
+  }
 }

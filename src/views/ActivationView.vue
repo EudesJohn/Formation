@@ -14,13 +14,13 @@ const MASTER_CODE = 'ELITE-2026-PRO'
 
 const handleActivation = () => {
   if (!accessCode.value) {
-    error.value = "Veuillez entrer votre code d'accès."
+    error.value = "Veuillez entrer votre code d'accÃ¨s."
     return
   }
 
   isLoading.value = true
   
-  // Simulation d'une petite attente pour le côté "Premium/Sérieux"
+  // Simulation d'une petite attente pour le cÃ´tÃ© "Premium/SÃ©rieux"
   setTimeout(() => {
     if (accessCode.value.trim().toUpperCase() === MASTER_CODE) {
       localStorage.setItem('ebook_access_token', 'validated_elite_2026')
@@ -35,7 +35,7 @@ const handleActivation = () => {
         }
       })
     } else {
-      error.value = "Code invalide. Contactez le support si le problème persiste."
+      error.value = "Code invalide. Contactez le support si le problÃ¨me persiste."
       gsap.fromTo('.activation-card', { x: -10 }, { x: 10, duration: 0.1, repeat: 5, yoyo: true })
     }
     isLoading.value = false
@@ -59,8 +59,8 @@ const handleActivation = () => {
           </div>
         </div>
 
-        <h1 class="luxury-title">Accès <span class="gold-text">Restreint</span></h1>
-        <p class="subtitle">Veuillez entrer votre code d'activation Élite pour débloquer le contenu de la Masterclass.</p>
+        <h1 class="luxury-title">AccÃ¨s <span class="gold-text">Restreint</span></h1>
+        <p class="subtitle">Veuillez entrer votre code d'activation Ã‰lite pour dÃ©bloquer le contenu de la Masterclass.</p>
 
         <div class="input-group">
           <input 
@@ -74,11 +74,11 @@ const handleActivation = () => {
         </div>
 
         <button @click="handleActivation" class="btn-primary activation-btn" :disabled="isLoading">
-          Activer mon accès <ShieldCheck :size="20" />
+          Activer mon accÃ¨s <ShieldCheck :size="20" />
         </button>
 
         <div class="support-link">
-          <p>Pas de code ? <a href="https://fooocsof.mychariow.shop" target="_blank">Obtenir mon accès Elite</a></p>
+          <p>Pas de code ? <a href="https://fooocsof.mychariow.shop" target="_blank">Obtenir mon accÃ¨s Elite</a></p>
         </div>
       </div>
     </main>
@@ -236,4 +236,29 @@ const handleActivation = () => {
   .lock-circle { width: 64px; height: 64px; }
   .lock-circle svg { width: 24px; height: 24px; }
 }
+
+@media (max-width: 375px) {
+  .activation-container { padding: 1rem; }
+  .activation-card { padding: 1.5rem 1.25rem; border-radius: 20px; }
+  .luxury-title { font-size: 1.4rem; }
+  .subtitle { font-size: 0.8rem; margin-bottom: 1.25rem; }
+  .elite-input { padding: 0.75rem; font-size: 0.9rem; }
+  .lock-circle { width: 56px; height: 56px; }
+  .lock-circle svg { width: 22px; height: 22px; }
+  .activation-btn { padding: 0.85rem 1.5rem; font-size: 0.9rem; min-height: 48px; }
+}
+
+@media (max-width: 360px) {
+  .activation-container { padding: 0.75rem; }
+  .activation-card { padding: 1.25rem 1rem; border-radius: 18px; }
+  .luxury-title { font-size: 1.25rem; }
+  .subtitle { font-size: 0.78rem; margin-bottom: 1rem; }
+  .elite-input { padding: 0.65rem; font-size: 0.85rem; letter-spacing: 1px; }
+  .lock-circle { width: 48px; height: 48px; }
+  .lock-circle svg { width: 20px; height: 20px; }
+  .activation-btn { padding: 0.75rem 1.25rem; font-size: 0.85rem; min-height: 44px; gap: 0.5rem; }
+  .support-link p { font-size: 0.8rem; }
+  .error-msg { font-size: 0.78rem; }
+}
+
 </style>

@@ -64,10 +64,13 @@ onMounted(() => {
 .hero-section {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
   padding-top: 80px;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -116,15 +119,18 @@ onMounted(() => {
 }
 
 .main-title {
-  font-size: 4.5rem;
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--text-muted);
   max-width: 500px;
+  width: 100%;
   margin-bottom: 2.5rem;
 }
 
@@ -153,6 +159,7 @@ onMounted(() => {
   padding: 1rem;
   transform: rotate(5deg);
   transition: transform 0.5s ease;
+  overflow: hidden;
 }
 
 .book-mockup:hover {
@@ -161,8 +168,11 @@ onMounted(() => {
 
 .cover-img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  object-fit: contain;
 }
 
 .glow-effect {
@@ -170,8 +180,10 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
@@ -253,6 +265,37 @@ onMounted(() => {
   }
   .badge {
     font-size: 0.75rem;
+  }
+  .book-mockup {
+    transform: rotate(2deg);
+    padding: 0.5rem;
+  }
+  .hero-visual {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-title {
+    font-size: 1.6rem;
+  }
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .book-mockup {
+    transform: rotate(1deg);
+    padding: 0.4rem;
+  }
+  .hero-visual {
+    max-width: 180px;
+  }
+  .hero-section {
+    padding-top: 50px;
   }
 }
 

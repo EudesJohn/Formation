@@ -10,67 +10,67 @@ const questions = ref([
   {
     id: 1,
     category: "Algorithme",
-    text: "Quel est l'objectif n°1 de l'algorithme TikTok/Instagram ?",
+    text: "Quel est l'objectif nÂ°1 de l'algorithme TikTok/Instagram ?",
     options: [
-      "Faire plaisir aux créateurs",
+      "Faire plaisir aux crÃ©ateurs",
       "Garder l'utilisateur le plus longtemps possible sur l'application",
-      "Vendre des publicités uniquement",
-      "Trier les vidéos par date de publication"
+      "Vendre des publicitÃ©s uniquement",
+      "Trier les vidÃ©os par date de publication"
     ],
     correct: 1,
-    explanation: "L'algorithme est conçu pour maximiser le temps de rétention. Plus tu gardes les gens sur l'app, plus il te pousse."
+    explanation: "L'algorithme est conÃ§u pour maximiser le temps de rÃ©tention. Plus tu gardes les gens sur l'app, plus il te pousse."
   },
   {
     id: 2,
-    category: "Viralité",
-    text: "Quelle est la partie la plus importante d'une vidéo pour devenir viral ?",
+    category: "ViralitÃ©",
+    text: "Quelle est la partie la plus importante d'une vidÃ©o pour devenir viral ?",
     options: [
-      "La qualité de la caméra",
+      "La qualitÃ© de la camÃ©ra",
       "La musique de fond",
-      "Le 'Hook' (les 2 premières secondes)",
-      "La description (légende)"
+      "Le 'Hook' (les 2 premiÃ¨res secondes)",
+      "La description (lÃ©gende)"
     ],
     correct: 2,
-    explanation: "Tout se joue au début. Si tu ne captures pas l'attention en 2 secondes, l'utilisateur swipe et ton watchtime s'effondre."
+    explanation: "Tout se joue au dÃ©but. Si tu ne captures pas l'attention en 2 secondes, l'utilisateur swipe et ton watchtime s'effondre."
   },
   {
     id: 3,
     category: "Architecture de Marque",
-    text: "À quoi sert principalement ton profil (Bio + Photo) ?",
+    text: "Ã€ quoi sert principalement ton profil (Bio + Photo) ?",
     options: [
-      "À montrer que tu es beau/belle",
-      "À transformer un visiteur curieux en abonné fidèle",
-      "À mettre un lien vers ton site uniquement",
-      "À décorer l'application"
+      "Ã€ montrer que tu es beau/belle",
+      "Ã€ transformer un visiteur curieux en abonnÃ© fidÃ¨le",
+      "Ã€ mettre un lien vers ton site uniquement",
+      "Ã€ dÃ©corer l'application"
     ],
     correct: 1,
-    explanation: "Ton profil est ta vitrine. Il doit répondre en 3 secondes à : 'Qui es-tu et qu'est-ce que tu m'apportes ?'"
+    explanation: "Ton profil est ta vitrine. Il doit rÃ©pondre en 3 secondes Ã  : 'Qui es-tu et qu'est-ce que tu m'apportes ?'"
   },
   {
     id: 4,
-    category: "Communauté",
-    text: "Quelle est la différence entre une 'Audience' et une 'Communauté' ?",
+    category: "CommunautÃ©",
+    text: "Quelle est la diffÃ©rence entre une 'Audience' et une 'CommunautÃ©' ?",
     options: [
-      "C'est la même chose",
-      "L'audience est plus grande que la communauté",
-      "La communauté repose sur la confiance et l'interaction réelle",
-      "La communauté coûte plus cher à entretenir"
+      "C'est la mÃªme chose",
+      "L'audience est plus grande que la communautÃ©",
+      "La communautÃ© repose sur la confiance et l'interaction rÃ©elle",
+      "La communautÃ© coÃ»te plus cher Ã  entretenir"
     ],
     correct: 2,
-    explanation: "Une audience regarde, une communauté s'engage et achète parce qu'elle te fait confiance."
+    explanation: "Une audience regarde, une communautÃ© s'engage et achÃ¨te parce qu'elle te fait confiance."
   },
   {
     id: 5,
-    category: "Monétisation",
-    text: "Quelle est la meilleure stratégie pour monétiser une petite audience ?",
+    category: "MonÃ©tisation",
+    text: "Quelle est la meilleure stratÃ©gie pour monÃ©tiser une petite audience ?",
     options: [
-      "Attendre d'avoir 100 000 abonnés",
-      "Compter uniquement sur les vues (Fonds créateurs)",
-      "Vendre un produit ou service à haute valeur ajoutée",
+      "Attendre d'avoir 100 000 abonnÃ©s",
+      "Compter uniquement sur les vues (Fonds crÃ©ateurs)",
+      "Vendre un produit ou service Ã  haute valeur ajoutÃ©e",
       "Demander des dons"
     ],
     correct: 2,
-    explanation: "Avec 1000 abonnés qualifiés, tu peux gagner plus qu'un influenceur à 1M d'abonnés si tu vends le bon produit."
+    explanation: "Avec 1000 abonnÃ©s qualifiÃ©s, tu peux gagner plus qu'un influenceur Ã  1M d'abonnÃ©s si tu vends le bon produit."
   }
 ])
 
@@ -141,9 +141,9 @@ const animateTransition = () => {
 
 const getVerdict = () => {
   const percent = (score.value / questions.value.length) * 100
-  if (percent === 100) return { title: "ÉLITE ABSOLUE", msg: "Tu maîtrises parfaitement les codes de 2026. Tu es prêt à dominer.", color: "#D4AF37" }
-  if (percent >= 70) return { title: "STRATÈGE CONFIRMÉ", msg: "Excellentes bases. Encore quelques détails et tu seras imparable.", color: "#2dd4bf" }
-  return { title: "APPRENTI CRÉATEUR", msg: "Reprends les chapitres sur l'algorithme et la psychologie. L'action t'attend.", color: "#94a3b8" }
+  if (percent === 100) return { title: "Ã‰LITE ABSOLUE", msg: "Tu maÃ®trises parfaitement les codes de 2026. Tu es prÃªt Ã  dominer.", color: "#D4AF37" }
+  if (percent >= 70) return { title: "STRATÃˆGE CONFIRMÃ‰", msg: "Excellentes bases. Encore quelques dÃ©tails et tu seras imparable.", color: "#2dd4bf" }
+  return { title: "APPRENTI CRÃ‰ATEUR", msg: "Reprends les chapitres sur l'algorithme et la psychologie. L'action t'attend.", color: "#94a3b8" }
 }
 </script>
 
@@ -163,13 +163,13 @@ const getVerdict = () => {
             <Brain :size="48" class="gold-text" />
           </div>
         </div>
-        <h1 class="luxury-title">Test de Maîtrise <span class="gold-text">Sociale</span></h1>
-        <p class="subtitle">Validez vos connaissances et prouvez que vous faites partie de l'élite des créateurs.</p>
+        <h1 class="luxury-title">Test de MaÃ®trise <span class="gold-text">Sociale</span></h1>
+        <p class="subtitle">Validez vos connaissances et prouvez que vous faites partie de l'Ã©lite des crÃ©ateurs.</p>
         
         <div class="quiz-info-grid">
           <div class="info-item">
             <Target :size="20" class="gold-text" />
-            <span>{{ questions.length }} Questions Stratégiques</span>
+            <span>{{ questions.length }} Questions StratÃ©giques</span>
           </div>
           <div class="info-item">
             <Zap :size="20" class="gold-text" />
@@ -180,7 +180,7 @@ const getVerdict = () => {
         <button @click="startQuiz" class="btn-luxury start-btn">
           Commencer l'Examen <ArrowRight :size="20" />
         </button>
-        <router-link to="/" class="back-link">Retour à l'eBook</router-link>
+        <router-link to="/" class="back-link">Retour Ã  l'eBook</router-link>
       </div>
 
       <!-- STEP 1: QUIZ -->
@@ -221,10 +221,10 @@ const getVerdict = () => {
 
         <div class="quiz-footer">
           <button v-if="!isAnswered" @click="submitAnswer" class="btn-primary" :disabled="selectedOption === null">
-            Valider la réponse
+            Valider la rÃ©ponse
           </button>
           <button v-else @click="nextQuestion" class="btn-luxury">
-            {{ currentQuestionIndex === questions.length - 1 ? 'Voir les résultats' : 'Question suivante' }}
+            {{ currentQuestionIndex === questions.length - 1 ? 'Voir les rÃ©sultats' : 'Question suivante' }}
           </button>
         </div>
       </div>
@@ -247,7 +247,7 @@ const getVerdict = () => {
             <RotateCcw :size="18" /> Recommencer
           </button>
           <router-link to="/" class="btn-luxury">
-            Retourner à la Formation
+            Retourner Ã  la Formation
           </router-link>
         </div>
 
@@ -478,4 +478,28 @@ const getVerdict = () => {
 
   .results-actions { gap: 0.75rem; }
 }
+@media (max-width: 360px) {
+  .quiz-layout { padding: 0.5rem; }
+  .quiz-card { padding: 1rem; border-radius: 16px; }
+  .luxury-title { font-size: 1.3rem; }
+  .subtitle { font-size: 0.8rem; margin-bottom: 1.5rem; }
+  .question-text { font-size: 1rem; margin-bottom: 1.25rem; }
+  .option-btn { padding: 0.7rem; font-size: 0.8rem; gap: 0.6rem; border-radius: 12px; min-height: 44px; }
+  .option-index { width: 22px; height: 22px; font-size: 0.65rem; }
+  .option-label { font-size: 0.8rem; }
+  .category-badge { font-size: 0.6rem; padding: 0.25rem 0.6rem; }
+  .q-counter { font-size: 0.65rem; }
+  .explanation-box { padding: 0.85rem; font-size: 0.78rem; border-radius: 12px; }
+  .info-item { padding: 0.6rem; font-size: 0.78rem; gap: 0.5rem; }
+  .quiz-info-grid { gap: 0.5rem; }
+  .brain-circle { width: 56px; height: 56px; }
+  .brain-circle svg { width: 24px; height: 24px; }
+  .final-score { font-size: 2.2rem; }
+  .total-q { font-size: 1rem; }
+  .verdict-title { font-size: 1.25rem; margin: 0.75rem 0; }
+  .verdict-msg { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .results-actions { gap: 0.5rem; }
+  .back-link { margin-top: 1.25rem; font-size: 0.8rem; }
+}
+
 </style>

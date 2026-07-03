@@ -199,8 +199,11 @@ onMounted(() => {
 
 .chapter-image img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  object-fit: contain;
 }
 
 @media (max-width: 968px) {
@@ -273,6 +276,65 @@ onMounted(() => {
 
   .chapter-content p {
     font-size: 0.95rem;
+  }
+
+  .chapter-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .chapters-section {
+    padding-bottom: 4rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .chapter-card {
+    padding: 1rem;
+    border-radius: 18px;
+    gap: 1rem;
+  }
+
+  .chapter-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .chapter-content p {
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+  }
+
+  .icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefit-list li {
+    font-size: 0.85rem;
+  }
+
+  .chapters-grid {
+    gap: 2rem;
   }
 }
 </style>

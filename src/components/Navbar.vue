@@ -303,6 +303,51 @@ onUnmounted(() => {
   }
 }
 
+@media (max-width: 360px) {
+  .navbar {
+    top: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    width: 96%;
+    border-radius: 40px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .mobile-toggle {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .mobile-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobile-menu-content {
+    width: 92%;
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+  }
+
+  .mobile-logo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-link {
+    padding: 1rem;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+
+  .btn-primary.mini {
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
+  }
+}
+
 /* Transitions */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.3s ease;
