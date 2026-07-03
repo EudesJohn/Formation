@@ -67,6 +67,19 @@ onMounted(() => {
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 60px;
+  }
 }
 
 .hero-bg {

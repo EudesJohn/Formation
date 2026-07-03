@@ -262,6 +262,7 @@ const getVerdict = () => {
 <style scoped>
 .quiz-layout {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: #050505;
   display: flex;
   align-items: center;

@@ -87,10 +87,11 @@ onMounted(() => {
   opacity: 0;
 }
 
-/* Désactiver la watermark si reduced-motion */
-@media (prefers-reduced-motion: reduce) {
+/* Désactiver la watermark si reduced-motion ou sur mobile (évite le débordement) */
+@media (prefers-reduced-motion: reduce), (max-width: 768px) {
   .watermark-overlay {
     opacity: 0 !important;
+    display: none !important;
   }
 }
 </style>

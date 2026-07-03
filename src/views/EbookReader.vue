@@ -1152,6 +1152,7 @@ onMounted(() => {
 .elite-layout {
   display: flex;
   height: 100vh;
+  height: 100dvh;
   background-color: #050505;
   color: #e5e5e5;
   font-family: 'Inter', sans-serif;
@@ -1168,7 +1169,7 @@ onMounted(() => {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sidebar.closed { width: 0; transform: translateX(-100%); }
+.sidebar.closed { width: 0; transform: translateX(-100%); pointer-events: none; }
 
 .sidebar-header {
   padding: 2rem;
@@ -1577,14 +1578,20 @@ onMounted(() => {
 .close-mobile { display: none; margin-right: -1rem; }
 
 @media (max-width: 1024px) {
-  .sidebar { 
-    position: fixed; 
-    height: 100vh; 
-    z-index: 1000; 
-    box-shadow: 20px 0 60px rgba(0,0,0,0.8); 
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1000;
+    box-shadow: 20px 0 60px rgba(0,0,0,0.8);
     width: 320px;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(20px);
+  }
+  .sidebar.closed {
+    width: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
   }
   .close-mobile { 
     display: flex; 
