@@ -2,8 +2,13 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  // Désactiver le clic droit
-  document.addEventListener('contextmenu', (e) => e.preventDefault());
+  // Respecter prefers-reduced-motion — ne pas désactiver les raccourcis si l'utilisateur a des limitations
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Désactiver le clic droit (sauf si reduced-motion est actif — handicap)
+  if (!prefersReducedMotion) {
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+  }
 
   // Désactiver les raccourcis clavier suspects
   document.addEventListener('keydown', (e) => {
@@ -53,7 +58,7 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 9990;
   overflow: hidden;
   opacity: 0.02;
   display: flex;
@@ -80,5 +85,12 @@ onMounted(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Désactiver la watermark si reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .watermark-overlay {
+    opacity: 0 !important;
+  }
 }
 </style>

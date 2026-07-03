@@ -18,25 +18,58 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-main);
   overflow-x: hidden;
   line-height: 1.6;
-  
-  /* Protection Anti-Vol */
-  user-select: none;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+
+  /* Protection Anti-Vol (sélective — le reader aura user-select: text) */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  user-select: none;
   -webkit-touch-callout: none;
 }
 
-/* Allow selection in specific input fields (for the activation code later) */
+/* Allow selection in specific input fields */
 input, textarea {
   user-select: auto !important;
   -webkit-user-select: auto !important;
+}
+
+/* Respecter les préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus visible accessible */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Curseur pointer sur tous les éléments interactifs */
+.btn-primary, .btn-secondary, .btn-pink, .btn-glass, .btn-luxury, .btn-bonus, .btn-small,
+button, [role="button"], .nav-link-btn, .mobile-toggle, .chapter-link {
+  cursor: pointer;
 }
 
 h1, h2, h3 {
@@ -61,6 +94,13 @@ h1, h2, h3 {
   box-shadow: var(--glass-shadow);
 }
 
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+}
+
 .glass-panel {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
@@ -77,27 +117,24 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-  /* base button improvements */
-  border-radius: 999px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-
   background: linear-gradient(135deg, var(--accent-primary), #6366f1);
   color: white;
   padding: 1.2rem 2.5rem;
   border-radius: 100px;
   border: none;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
   backdrop-filter: blur(5px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  min-height: 52px;
+  min-width: 52px;
 }
 
 .btn-primary::before {
@@ -193,17 +230,18 @@ h1, h2, h3 {
   background: linear-gradient(135deg, #D4AF37, var(--accent-primary));
   color: black;
   padding: 1rem 2rem;
-  border-radius: 999px;
+  border-radius: 100px;
   border: 2px solid #D4AF37;
   font-weight: 700;
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 52px;
+  min-width: 52px;
 }
 
 .btn-luxury:hover {
@@ -213,18 +251,12 @@ h1, h2, h3 {
 
 /* Mini primary button already defined */
 .btn-secondary {
-  /* unified button style */
-  border-radius: 999px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-
   background: linear-gradient(135deg, var(--accent-secondary), #06b6d4);
   color: white;
   padding: 1rem 2rem;
   border-radius: 80px;
   border: none;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -233,6 +265,9 @@ h1, h2, h3 {
   box-shadow: 0 8px 20px rgba(45, 212, 191, 0.25);
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  min-height: 52px;
+  min-width: 52px;
 }
 
 .btn-secondary:hover {
@@ -248,18 +283,12 @@ h1, h2, h3 {
 
 /* Pink accent button */
 .btn-pink {
-  /* unified button style */
-  border-radius: 999px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-
   background: linear-gradient(135deg, var(--accent-pink), #fb7185);
   color: white;
   padding: 1rem 2rem;
   border-radius: 80px;
   border: none;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -268,6 +297,9 @@ h1, h2, h3 {
   box-shadow: 0 8px 20px rgba(244, 114, 182, 0.25);
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  min-height: 52px;
+  min-width: 52px;
 }
 
 .btn-pink:hover {
@@ -289,14 +321,15 @@ h1, h2, h3 {
   padding: 1rem 2rem;
   border-radius: 80px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  min-height: 52px;
+  min-width: 52px;
 }
 
 .btn-glass:hover {
@@ -313,6 +346,18 @@ h1, h2, h3 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 4rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    padding: 3rem 1rem;
+  }
 }
 
 @keyframes float {

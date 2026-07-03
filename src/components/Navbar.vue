@@ -6,15 +6,19 @@ import gsap from 'gsap'
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const toggleMenu = async () => {
   isMenuOpen.value = !isMenuOpen.value
   if (isMenuOpen.value) {
     document.body.style.overflow = 'hidden'
-    await nextTick()
-    gsap.fromTo('.mobile-menu-content', 
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
-    )
+    if (!prefersReducedMotion) {
+      await nextTick()
+      gsap.fromTo('.mobile-menu-content',
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+      )
+    }
   } else {
     document.body.style.overflow = ''
   }
@@ -253,18 +257,49 @@ onUnmounted(() => {
   .desktop-only {
     display: none;
   }
-  
+
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
   }
 
   .navbar {
     top: 1rem;
     padding: 0.6rem 1.2rem;
+    width: 92%;
   }
 
   .logo {
     font-size: 1.2rem;
+  }
+
+  .mobile-link {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-menu {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 0.75rem;
+    padding: 0.5rem 1rem;
+    width: 94%;
+    border-radius: 60px;
+  }
+
+  .mobile-menu-content {
+    width: 90%;
+    padding: 2rem 1.25rem;
+    border-radius: 28px;
   }
 }
 

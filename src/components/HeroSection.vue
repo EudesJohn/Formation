@@ -1,19 +1,22 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
-import { Rocket, ChevronRight } from 'lucide-vue-next'
+import { Rocket, ChevronRight, Sparkles } from 'lucide-vue-next'
 
 const heroTitle = ref(null)
 const heroContent = ref(null)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 onMounted(() => {
+  if (prefersReducedMotion) return
+
   gsap.from(heroTitle.value, {
     y: 100,
     opacity: 0,
     duration: 1.2,
     ease: "power4.out"
   })
-  
+
   gsap.from(heroContent.value, {
     y: 50,
     opacity: 0,
@@ -29,7 +32,7 @@ onMounted(() => {
     <div class="hero-bg"></div>
     <div class="section-container hero-grid">
       <div class="hero-text" ref="heroContent">
-        <span class="badge">🚀 Le Guide Ultime 2026</span>
+        <span class="badge"><Rocket :size="16" /> Le Guide Ultime 2026</span>
         <h1 ref="heroTitle" class="main-title">
           Réseaux Sociaux : <br/>
           <span class="gradient-text">Zéro à 10 000</span> Abonnés
@@ -93,7 +96,9 @@ onMounted(() => {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent-primary);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -213,8 +218,28 @@ onMounted(() => {
     gap: 0.75rem;
   }
   .btn-primary {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     font-size: 0.95rem;
+    min-height: 52px;
+  }
+  .hero-visual {
+    max-width: 240px;
+  }
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .badge {
+    font-size: 0.75rem;
   }
 }
 

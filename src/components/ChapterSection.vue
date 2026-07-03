@@ -61,6 +61,9 @@ const chapters = [
 const chapterRefs = ref([])
 
 onMounted(() => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (prefersReducedMotion) return
+
   chapterRefs.value.forEach((el, index) => {
     gsap.from(el, {
       scrollTrigger: {
@@ -236,6 +239,40 @@ onMounted(() => {
 @media (max-width: 480px) {
   .section-header h2 {
     font-size: 1.8rem;
+  }
+
+  .chapter-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+
+  .chapter-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .chapter-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .chapter-content p {
+    font-size: 0.95rem;
   }
 }
 </style>

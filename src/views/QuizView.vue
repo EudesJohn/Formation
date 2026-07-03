@@ -129,9 +129,12 @@ const restartQuiz = () => {
   userAnswers.value = []
 }
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const animateTransition = () => {
-  gsap.fromTo('.quiz-card', 
-    { opacity: 0, y: 20 }, 
+  if (prefersReducedMotion) return
+  gsap.fromTo('.quiz-card',
+    { opacity: 0, y: 20 },
     { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
   )
 }
@@ -444,5 +447,34 @@ const getVerdict = () => {
   .back-link { margin-top: 1.5rem; font-size: 0.85rem; }
   
   .watermark-overlay { opacity: 0.03; font-size: 8px; }
+}
+
+@media (max-width: 375px) {
+  .quiz-layout { padding: 0.75rem; }
+  .quiz-card { padding: 1.25rem; border-radius: 20px; }
+  .luxury-title { font-size: 1.5rem; }
+  .subtitle { font-size: 0.85rem; margin-bottom: 2rem; }
+
+  .question-text { font-size: 1.1rem; margin-bottom: 1.5rem; }
+  .option-btn { padding: 0.85rem; font-size: 0.85rem; gap: 0.75rem; border-radius: 14px; min-height: 48px; }
+  .option-index { width: 24px; height: 24px; font-size: 0.7rem; }
+  .option-label { font-size: 0.85rem; }
+
+  .category-badge { font-size: 0.65rem; padding: 0.3rem 0.75rem; }
+  .q-counter { font-size: 0.7rem; }
+  .progress-container { height: 4px; }
+
+  .explanation-box { padding: 1rem; font-size: 0.8rem; border-radius: 14px; }
+  .info-item { padding: 0.75rem; font-size: 0.8rem; gap: 0.75rem; }
+
+  .brain-circle { width: 64px; height: 64px; }
+  .brain-circle svg { width: 28px; height: 28px; }
+
+  .final-score { font-size: 2.5rem; }
+  .total-q { font-size: 1.2rem; }
+  .verdict-title { font-size: 1.4rem; }
+  .verdict-msg { font-size: 0.9rem; }
+
+  .results-actions { gap: 0.75rem; }
 }
 </style>
