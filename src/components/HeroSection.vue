@@ -49,7 +49,7 @@ onMounted(() => {
           </a>
         </div>
       </div>
-      
+
       <div class="hero-visual animate-float">
         <div class="book-mockup glass-card">
           <img src="/images/cover.png" alt="E-book Cover" class="cover-img" />
@@ -91,9 +91,10 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(45, 212, 191, 0.15) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(34, 211, 238, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(236, 73, 153, 0.04) 0%, transparent 50%);
   z-index: -1;
 }
 
@@ -105,10 +106,10 @@ onMounted(() => {
 }
 
 .badge {
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
   padding: 0.5rem 1rem;
-  border-radius: 100px;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent-primary);
@@ -128,7 +129,7 @@ onMounted(() => {
 
 .hero-description {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   max-width: 500px;
   width: 100%;
   margin-bottom: 2.5rem;
@@ -152,18 +153,22 @@ onMounted(() => {
 
 .btn-secondary:hover {
   opacity: 0.8;
+  color: var(--accent-primary);
 }
 
 .book-mockup {
   position: relative;
   padding: 1rem;
   transform: rotate(5deg);
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
   overflow: hidden;
+  transform-origin: center center;
+  border-radius: 20px;
 }
 
 .book-mockup:hover {
-  transform: rotate(0deg) scale(1.05);
+  transform: rotate(0deg);
+  box-shadow: 0 30px 60px rgba(139, 92, 246, 0.25);
 }
 
 .cover-img {
@@ -184,7 +189,7 @@ onMounted(() => {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -197,13 +202,13 @@ onMounted(() => {
     padding-bottom: 4rem;
     gap: 2rem;
   }
-  
+
   .hero-text {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .main-title {
     font-size: 2.8rem;
     margin-bottom: 1rem;
@@ -215,18 +220,17 @@ onMounted(() => {
     padding: 0 1rem;
   }
 
-  
   .hero-actions {
     flex-direction: column;
     width: 100%;
     gap: 1rem;
   }
-  
+
   .btn-primary {
     width: 100%;
     justify-content: center;
   }
-  
+
   .hero-visual {
     margin-top: 2rem;
     max-width: 320px;
@@ -269,6 +273,7 @@ onMounted(() => {
   .book-mockup {
     transform: rotate(2deg);
     padding: 0.5rem;
+    border-radius: 16px;
   }
   .hero-visual {
     max-width: 200px;
@@ -297,6 +302,44 @@ onMounted(() => {
   .hero-section {
     padding-top: 50px;
   }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
+@media (max-width: 320px) {
+  .hero-section {
+    padding-top: 45px;
+    min-height: 90dvh;
+  }
+  .main-title {
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+  .hero-description {
+    font-size: 0.85rem;
+    padding: 0;
+  }
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .hero-visual {
+    max-width: 150px;
+  }
+  .book-mockup {
+    transform: none;
+    padding: 0.3rem;
+  }
+  .cover-img {
+    border-radius: 12px;
+  }
+}
 </style>

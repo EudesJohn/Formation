@@ -10,67 +10,67 @@ const questions = ref([
   {
     id: 1,
     category: "Algorithme",
-    text: "Quel est l'objectif nÂ°1 de l'algorithme TikTok/Instagram ?",
+    text: "Quel est l'objectif n°1 de l'algorithme TikTok/Instagram ?",
     options: [
-      "Faire plaisir aux crÃ©ateurs",
+      "Faire plaisir aux créateurs",
       "Garder l'utilisateur le plus longtemps possible sur l'application",
-      "Vendre des publicitÃ©s uniquement",
-      "Trier les vidÃ©os par date de publication"
+      "Vendre des publicités uniquement",
+      "Trier les vidéos par date de publication"
     ],
     correct: 1,
-    explanation: "L'algorithme est conÃ§u pour maximiser le temps de rÃ©tention. Plus tu gardes les gens sur l'app, plus il te pousse."
+    explanation: "L'algorithme est conçu pour maximiser le temps de rétention. Plus tu gardes les gens sur l'app, plus il te pousse."
   },
   {
     id: 2,
-    category: "ViralitÃ©",
-    text: "Quelle est la partie la plus importante d'une vidÃ©o pour devenir viral ?",
+    category: "Viralité",
+    text: "Quelle est la partie la plus importante d'une vidéo pour devenir viral ?",
     options: [
-      "La qualitÃ© de la camÃ©ra",
+      "La qualité de la caméra",
       "La musique de fond",
-      "Le 'Hook' (les 2 premiÃ¨res secondes)",
-      "La description (lÃ©gende)"
+      "Le 'Hook' (les 2 premières secondes)",
+      "La description (légende)"
     ],
     correct: 2,
-    explanation: "Tout se joue au dÃ©but. Si tu ne captures pas l'attention en 2 secondes, l'utilisateur swipe et ton watchtime s'effondre."
+    explanation: "Tout se joue au début. Si tu ne captures pas l'attention en 2 secondes, l'utilisateur swipe et ton watchtime s'effondre."
   },
   {
     id: 3,
     category: "Architecture de Marque",
-    text: "Ã€ quoi sert principalement ton profil (Bio + Photo) ?",
+    text: "À quoi sert principalement ton profil (Bio + Photo) ?",
     options: [
-      "Ã€ montrer que tu es beau/belle",
-      "Ã€ transformer un visiteur curieux en abonnÃ© fidÃ¨le",
-      "Ã€ mettre un lien vers ton site uniquement",
-      "Ã€ dÃ©corer l'application"
+      "À montrer que tu es beau/belle",
+      "À transformer un visiteur curieux en abonné fidèle",
+      "À mettre un lien vers ton site uniquement",
+      "À décorer l'application"
     ],
     correct: 1,
-    explanation: "Ton profil est ta vitrine. Il doit rÃ©pondre en 3 secondes Ã  : 'Qui es-tu et qu'est-ce que tu m'apportes ?'"
+    explanation: "Ton profil est ta vitrine. Il doit répondre en 3 secondes à : 'Qui es-tu et qu'est-ce que tu m'apportes ?'"
   },
   {
     id: 4,
-    category: "CommunautÃ©",
-    text: "Quelle est la diffÃ©rence entre une 'Audience' et une 'CommunautÃ©' ?",
+    category: "Communauté",
+    text: "Quelle est la différence entre une 'Audience' et une 'Communauté' ?",
     options: [
-      "C'est la mÃªme chose",
-      "L'audience est plus grande que la communautÃ©",
-      "La communautÃ© repose sur la confiance et l'interaction rÃ©elle",
-      "La communautÃ© coÃ»te plus cher Ã  entretenir"
+      "C'est la même chose",
+      "L'audience est plus grande que la communauté",
+      "La communauté repose sur la confiance et l'interaction réelle",
+      "La communauté coûte plus cher à entretenir"
     ],
     correct: 2,
-    explanation: "Une audience regarde, une communautÃ© s'engage et achÃ¨te parce qu'elle te fait confiance."
+    explanation: "Une audience regarde, une communauté s'engage et achète parce qu'elle te fait confiance."
   },
   {
     id: 5,
-    category: "MonÃ©tisation",
-    text: "Quelle est la meilleure stratÃ©gie pour monÃ©tiser une petite audience ?",
+    category: "Monétisation",
+    text: "Quelle est la meilleure stratégie pour monétiser une petite audience ?",
     options: [
-      "Attendre d'avoir 100 000 abonnÃ©s",
-      "Compter uniquement sur les vues (Fonds crÃ©ateurs)",
-      "Vendre un produit ou service Ã  haute valeur ajoutÃ©e",
+      "Attendre d'avoir 100 000 abonnés",
+      "Compter uniquement sur les vues (Fonds créateurs)",
+      "Vendre un produit ou service à haute valeur ajoutée",
       "Demander des dons"
     ],
     correct: 2,
-    explanation: "Avec 1000 abonnÃ©s qualifiÃ©s, tu peux gagner plus qu'un influenceur Ã  1M d'abonnÃ©s si tu vends le bon produit."
+    explanation: "Avec 1000 abonnés qualifiés, tu peux gagner plus qu'un influenceur à 1M d'abonnés si tu vends le bon produit."
   }
 ])
 
@@ -96,12 +96,12 @@ const selectOption = (index) => {
 
 const submitAnswer = () => {
   if (selectedOption.value === null) return
-  
+
   isAnswered.value = true
   if (selectedOption.value === currentQuestion.value.correct) {
     score.value++
   }
-  
+
   userAnswers.value.push({
     questionId: currentQuestion.value.id,
     selected: selectedOption.value,
@@ -141,9 +141,9 @@ const animateTransition = () => {
 
 const getVerdict = () => {
   const percent = (score.value / questions.value.length) * 100
-  if (percent === 100) return { title: "Ã‰LITE ABSOLUE", msg: "Tu maÃ®trises parfaitement les codes de 2026. Tu es prÃªt Ã  dominer.", color: "#D4AF37" }
-  if (percent >= 70) return { title: "STRATÃˆGE CONFIRMÃ‰", msg: "Excellentes bases. Encore quelques dÃ©tails et tu seras imparable.", color: "#2dd4bf" }
-  return { title: "APPRENTI CRÃ‰ATEUR", msg: "Reprends les chapitres sur l'algorithme et la psychologie. L'action t'attend.", color: "#94a3b8" }
+  if (percent === 100) return { title: "ÉLITE ABSOLUE", msg: "Tu maîtrises parfaitement les codes de 2026. Tu es prêt à dominer.", color: "var(--gold)" }
+  if (percent >= 70) return { title: "STRATÈGE CONFIRMÉ", msg: "Excellentes bases. Encore quelques détails et tu seras imparable.", color: "#22D3EE" }
+  return { title: "APPRENTI CRÉATEUR", msg: "Reprends les chapitres sur l'algorithme et la psychologie. L'action t'attend.", color: "#A1A1AA" }
 }
 </script>
 
@@ -160,19 +160,19 @@ const getVerdict = () => {
       <div v-if="currentStep === 0" class="quiz-card glass-card start-screen">
         <div class="icon-header">
           <div class="brain-circle">
-            <Brain :size="48" class="gold-text" />
+            <Brain :size="48" class="amber-text" />
           </div>
         </div>
-        <h1 class="luxury-title">Test de MaÃ®trise <span class="gold-text">Sociale</span></h1>
-        <p class="subtitle">Validez vos connaissances et prouvez que vous faites partie de l'Ã©lite des crÃ©ateurs.</p>
-        
+        <h1 class="luxury-title">Test de Maîtrise <span class="amber-text">Sociale</span></h1>
+        <p class="subtitle">Validez vos connaissances et prouvez que vous faites partie de l'élite des créateurs.</p>
+
         <div class="quiz-info-grid">
           <div class="info-item">
-            <Target :size="20" class="gold-text" />
-            <span>{{ questions.length }} Questions StratÃ©giques</span>
+            <Target :size="20" class="amber-text" />
+            <span>{{ questions.length }} Questions Stratégiques</span>
           </div>
           <div class="info-item">
-            <Zap :size="20" class="gold-text" />
+            <Zap :size="20" class="amber-text" />
             <span>Validation des acquis 2026</span>
           </div>
         </div>
@@ -180,7 +180,7 @@ const getVerdict = () => {
         <button @click="startQuiz" class="btn-luxury start-btn">
           Commencer l'Examen <ArrowRight :size="20" />
         </button>
-        <router-link to="/" class="back-link">Retour Ã  l'eBook</router-link>
+        <router-link to="/" class="back-link">Retour à l'eBook</router-link>
       </div>
 
       <!-- STEP 1: QUIZ -->
@@ -196,12 +196,12 @@ const getVerdict = () => {
         <h2 class="question-text">{{ currentQuestion.text }}</h2>
 
         <div class="options-grid">
-          <button 
-            v-for="(option, index) in currentQuestion.options" 
+          <button
+            v-for="(option, index) in currentQuestion.options"
             :key="index"
             @click="selectOption(index)"
             class="option-btn"
-            :class="{ 
+            :class="{
               'selected': selectedOption === index,
               'correct': isAnswered && index === currentQuestion.correct,
               'wrong': isAnswered && selectedOption === index && index !== currentQuestion.correct
@@ -221,10 +221,10 @@ const getVerdict = () => {
 
         <div class="quiz-footer">
           <button v-if="!isAnswered" @click="submitAnswer" class="btn-primary" :disabled="selectedOption === null">
-            Valider la rÃ©ponse
+            Valider la réponse
           </button>
           <button v-else @click="nextQuestion" class="btn-luxury">
-            {{ currentQuestionIndex === questions.length - 1 ? 'Voir les rÃ©sultats' : 'Question suivante' }}
+            {{ currentQuestionIndex === questions.length - 1 ? 'Voir les résultats' : 'Question suivante' }}
           </button>
         </div>
       </div>
@@ -232,7 +232,7 @@ const getVerdict = () => {
       <!-- STEP 2: RESULTS -->
       <div v-else-if="currentStep === 2" class="quiz-card glass-card results-screen">
         <div class="result-header">
-          <Trophy :size="64" class="gold-text animate-float" />
+          <Trophy :size="64" class="amber-text animate-float" />
           <h2 class="verdict-title" :style="{ color: getVerdict().color }">{{ getVerdict().title }}</h2>
           <div class="score-circle">
             <span class="final-score">{{ score }}</span>
@@ -247,12 +247,12 @@ const getVerdict = () => {
             <RotateCcw :size="18" /> Recommencer
           </button>
           <router-link to="/" class="btn-luxury">
-            Retourner Ã  la Formation
+            Retourner à la Formation
           </router-link>
         </div>
 
         <div class="share-box">
-          <p>Partage ton score avec le tag <span class="gold-text">#SocialMasteryElite</span></p>
+          <p>Partage ton score avec le tag <span class="amber-text">#SocialMasteryElite</span></p>
         </div>
       </div>
     </main>
@@ -263,7 +263,7 @@ const getVerdict = () => {
 .quiz-layout {
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: #050505;
+  background-color: var(--bg-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,7 +280,7 @@ const getVerdict = () => {
 
 .quiz-card {
   padding: 3rem;
-  border-radius: 40px;
+  border-radius: 24px;
   text-align: center;
 }
 
@@ -288,8 +288,8 @@ const getVerdict = () => {
 .brain-circle {
   width: 100px;
   height: 100px;
-  background: rgba(212, 175, 55, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -297,8 +297,8 @@ const getVerdict = () => {
 }
 
 .luxury-title { font-size: 2.5rem; margin-bottom: 1rem; }
-.gold-text { color: #D4AF37; }
-.subtitle { color: #888; margin-bottom: 3rem; }
+.amber-text { color: var(--gold); }
+.subtitle { color: var(--text-secondary); margin-bottom: 3rem; }
 
 .quiz-info-grid {
   display: grid;
@@ -308,9 +308,9 @@ const getVerdict = () => {
 }
 
 .info-item {
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-card);
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -319,8 +319,8 @@ const getVerdict = () => {
 }
 
 .start-btn { width: 100%; }
-.back-link { display: block; margin-top: 2rem; color: #555; text-decoration: none; font-weight: 600; }
-.back-link:hover { color: #D4AF37; }
+.back-link { display: block; margin-top: 2rem; color: var(--text-secondary); text-decoration: none; font-weight: 600; }
+.back-link:hover { color: var(--gold); }
 
 /* Quiz Main Style */
 .quiz-header {
@@ -331,18 +331,18 @@ const getVerdict = () => {
 }
 
 .category-badge {
-  background: rgba(212, 175, 55, 0.1);
-  color: #D4AF37;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--gold);
   padding: 0.4rem 1rem;
-  border-radius: 100px;
+  border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
 .progress-container { flex-grow: 1; height: 6px; background: #222; border-radius: 10px; overflow: hidden; }
-.progress-bar { height: 100%; background: #D4AF37; transition: width 0.4s ease; }
-.q-counter { font-size: 0.8rem; font-weight: 800; color: #555; }
+.progress-bar { height: 100%; background: var(--gold); transition: width 0.4s ease; }
+.q-counter { font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); }
 
 .question-text {
   font-family: 'Playfair Display', serif;
@@ -360,11 +360,11 @@ const getVerdict = () => {
 }
 
 .option-btn {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
   padding: 1.2rem 1.5rem;
-  border-radius: 20px;
-  color: #ccc;
+  border-radius: 14px;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -374,18 +374,18 @@ const getVerdict = () => {
 }
 
 .option-btn:hover:not(:disabled) {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(245, 158, 11, 0.3);
   transform: translateX(5px);
 }
 
 .option-btn.selected {
-  background: rgba(212, 175, 55, 0.05);
-  border-color: #D4AF37;
+  background: rgba(245, 158, 11, 0.06);
+  border-color: var(--gold);
   color: white;
 }
 
-.option-btn.correct { background: rgba(45, 212, 191, 0.1); border-color: #2dd4bf; color: #2dd4bf; }
+.option-btn.correct { background: rgba(34, 211, 238, 0.1); border-color: #22D3EE; color: #22D3EE; }
 .option-btn.wrong { background: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #ef4444; }
 
 .option-index {
@@ -404,13 +404,13 @@ const getVerdict = () => {
 
 .explanation-box {
   padding: 1.5rem;
-  border-radius: 20px;
+  border-radius: 16px;
   margin-bottom: 2rem;
   font-size: 0.9rem;
   line-height: 1.6;
   text-align: left;
 }
-.explanation-box.success { background: rgba(45, 212, 191, 0.05); color: #2dd4bf; border-left: 4px solid #2dd4bf; }
+.explanation-box.success { background: rgba(34, 211, 238, 0.05); color: #22D3EE; border-left: 4px solid #22D3EE; }
 .explanation-box.error { background: rgba(239, 68, 68, 0.05); color: #ef4444; border-left: 4px solid #ef4444; }
 
 .quiz-footer { margin-top: 2rem; }
@@ -419,10 +419,9 @@ const getVerdict = () => {
 .result-header { margin-bottom: 2rem; }
 .verdict-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 1.5rem 0; }
 .score-circle { display: inline-block; margin-bottom: 2rem; }
-.final-score { font-size: 4rem; font-weight: 900; color: #D4AF37; }
+.final-score { font-size: 4rem; font-weight: 900; color: var(--gold); }
 .total-q { font-size: 1.5rem; color: #555; font-weight: 800; }
-
-.verdict-msg { font-size: 1.2rem; color: #888; margin-bottom: 3rem; line-height: 1.6; }
+.verdict-msg { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.6; }
 
 .results-actions {
   display: flex;
@@ -431,33 +430,33 @@ const getVerdict = () => {
   margin-bottom: 3rem;
 }
 
-.share-box { font-size: 0.85rem; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+.share-box { font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--glass-border); padding-top: 2rem; }
 
 @media (max-width: 640px) {
   .quiz-layout { padding: 1rem; }
-  .quiz-card { padding: 1.5rem; border-radius: 24px; }
+  .quiz-card { padding: 1.5rem; border-radius: 16px; }
   .luxury-title { font-size: 1.8rem; line-height: 1.2; }
   .question-text { font-size: 1.3rem; margin-bottom: 2rem; }
   .quiz-info-grid { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 2rem; }
   .results-actions { flex-direction: column; gap: 1rem; }
-  .option-btn { padding: 1rem; font-size: 0.95rem; gap: 1rem; border-radius: 16px; }
+  .option-btn { padding: 1rem; font-size: 0.95rem; gap: 1rem; border-radius: 12px; }
   .option-index { width: 28px; height: 28px; font-size: 0.75rem; }
   .final-score { font-size: 3rem; }
   .verdict-title { font-size: 1.8rem; margin: 1rem 0; }
   .verdict-msg { font-size: 1rem; margin-bottom: 2rem; }
   .back-link { margin-top: 1.5rem; font-size: 0.85rem; }
-  
+
   .watermark-overlay { opacity: 0.03; font-size: 8px; }
 }
 
 @media (max-width: 375px) {
   .quiz-layout { padding: 0.75rem; }
-  .quiz-card { padding: 1.25rem; border-radius: 20px; }
+  .quiz-card { padding: 1.25rem; border-radius: 14px; }
   .luxury-title { font-size: 1.5rem; }
   .subtitle { font-size: 0.85rem; margin-bottom: 2rem; }
 
   .question-text { font-size: 1.1rem; margin-bottom: 1.5rem; }
-  .option-btn { padding: 0.85rem; font-size: 0.85rem; gap: 0.75rem; border-radius: 14px; min-height: 48px; }
+  .option-btn { padding: 0.85rem; font-size: 0.85rem; gap: 0.75rem; border-radius: 10px; min-height: 48px; }
   .option-index { width: 24px; height: 24px; font-size: 0.7rem; }
   .option-label { font-size: 0.85rem; }
 
@@ -465,7 +464,7 @@ const getVerdict = () => {
   .q-counter { font-size: 0.7rem; }
   .progress-container { height: 4px; }
 
-  .explanation-box { padding: 1rem; font-size: 0.8rem; border-radius: 14px; }
+  .explanation-box { padding: 1rem; font-size: 0.8rem; border-radius: 12px; }
   .info-item { padding: 0.75rem; font-size: 0.8rem; gap: 0.75rem; }
 
   .brain-circle { width: 64px; height: 64px; }
@@ -475,21 +474,21 @@ const getVerdict = () => {
   .total-q { font-size: 1.2rem; }
   .verdict-title { font-size: 1.4rem; }
   .verdict-msg { font-size: 0.9rem; }
-
   .results-actions { gap: 0.75rem; }
 }
+
 @media (max-width: 360px) {
   .quiz-layout { padding: 0.5rem; }
-  .quiz-card { padding: 1rem; border-radius: 16px; }
+  .quiz-card { padding: 1rem; border-radius: 12px; }
   .luxury-title { font-size: 1.3rem; }
   .subtitle { font-size: 0.8rem; margin-bottom: 1.5rem; }
   .question-text { font-size: 1rem; margin-bottom: 1.25rem; }
-  .option-btn { padding: 0.7rem; font-size: 0.8rem; gap: 0.6rem; border-radius: 12px; min-height: 44px; }
+  .option-btn { padding: 0.7rem; font-size: 0.8rem; gap: 0.6rem; border-radius: 10px; min-height: 44px; }
   .option-index { width: 22px; height: 22px; font-size: 0.65rem; }
   .option-label { font-size: 0.8rem; }
   .category-badge { font-size: 0.6rem; padding: 0.25rem 0.6rem; }
   .q-counter { font-size: 0.65rem; }
-  .explanation-box { padding: 0.85rem; font-size: 0.78rem; border-radius: 12px; }
+  .explanation-box { padding: 0.85rem; font-size: 0.78rem; border-radius: 10px; }
   .info-item { padding: 0.6rem; font-size: 0.78rem; gap: 0.5rem; }
   .quiz-info-grid { gap: 0.5rem; }
   .brain-circle { width: 56px; height: 56px; }
@@ -501,5 +500,4 @@ const getVerdict = () => {
   .results-actions { gap: 0.5rem; }
   .back-link { margin-top: 1.25rem; font-size: 0.8rem; }
 }
-
 </style>

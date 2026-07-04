@@ -89,8 +89,8 @@ onMounted(() => {
       </div>
 
       <div class="chapters-grid">
-        <div 
-          v-for="(chapter, index) in chapters" 
+        <div
+          v-for="(chapter, index) in chapters"
           :key="index"
           class="chapter-card glass-card"
           ref="chapterRefs"
@@ -132,7 +132,7 @@ onMounted(() => {
 }
 
 .section-header p {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 1.2rem;
 }
 
@@ -162,7 +162,7 @@ onMounted(() => {
 .icon-wrapper {
   width: 64px;
   height: 64px;
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(139, 92, 246, 0.1);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@ onMounted(() => {
 }
 
 .chapter-content p {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -210,7 +210,7 @@ onMounted(() => {
   .section-header h2 {
     font-size: 2.2rem;
   }
-  
+
   .section-header p {
     font-size: 1rem;
   }
@@ -223,13 +223,13 @@ onMounted(() => {
     grid-template-columns: 1fr;
     padding: 2rem;
     gap: 2rem;
-    border-radius: 30px;
+    border-radius: 20px;
   }
-  
+
   .chapter-card.reverse {
     direction: ltr;
   }
-  
+
   .chapter-image {
     order: -1;
   }
@@ -246,7 +246,7 @@ onMounted(() => {
 
   .chapter-card {
     padding: 1.5rem;
-    border-radius: 24px;
+    border-radius: 16px;
   }
 
   .chapter-content h3 {
@@ -280,7 +280,7 @@ onMounted(() => {
 
   .chapter-card {
     padding: 1.25rem;
-    border-radius: 20px;
+    border-radius: 14px;
     gap: 1.5rem;
   }
 }
@@ -304,7 +304,7 @@ onMounted(() => {
 
   .chapter-card {
     padding: 1rem;
-    border-radius: 18px;
+    border-radius: 12px;
     gap: 1rem;
   }
 
@@ -335,6 +335,54 @@ onMounted(() => {
 
   .chapters-grid {
     gap: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .chapters-section {
+    padding-bottom: 3rem;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+  .section-header p {
+    font-size: 0.82rem;
+  }
+  .chapter-card {
+    padding: 0.85rem;
+    border-radius: 12px;
+    gap: 0.85rem;
+  }
+  .chapter-content h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  .chapter-content p {
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+  }
+  .icon-wrapper {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.75rem;
+  }
+  .icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+  .benefit-list li {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+  .benefit-list li svg {
+    width: 14px;
+    height: 14px;
+  }
+  .chapters-grid {
+    gap: 1.5rem;
   }
 }
 </style>

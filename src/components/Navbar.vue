@@ -15,8 +15,8 @@ const toggleMenu = async () => {
     if (!prefersReducedMotion) {
       await nextTick()
       gsap.fromTo('.mobile-menu-content',
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+        { opacity: 0, scale: 0.95, y: -10 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: 'power2.out' }
       )
     }
   } else {
@@ -96,22 +96,23 @@ onUnmounted(() => {
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 1200px;
+  max-width: 1100px;
   z-index: 2000;
   padding: 0.75rem 1.5rem;
-  border-radius: 100px;
+  border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(10, 1, 24, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 15, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled {
   top: 1rem;
   width: 95%;
-  background: rgba(10, 1, 24, 0.8);
-  border-color: rgba(124, 58, 237, 0.3);
+  background: rgba(10, 10, 15, 0.9);
+  border-color: rgba(139, 92, 246, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -145,16 +146,18 @@ onUnmounted(() => {
 .nav-link-btn {
   background: none;
   border: none;
-  color: var(--text-main);
+  color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: color 0.3s;
+  border-radius: 8px;
 }
 
 .nav-link-btn:hover {
   color: var(--accent-primary);
+  background: rgba(139, 92, 246, 0.05);
 }
 
 .btn-primary.mini {
@@ -163,11 +166,17 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 100px;
-  background: linear-gradient(135deg, var(--accent-primary), #6366f1);
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-primary), #A78BFA);
   color: white;
   text-decoration: none;
   font-weight: 700;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary.mini:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
 
 .mobile-toggle {
@@ -195,12 +204,14 @@ onUnmounted(() => {
 .mobile-menu-content {
   width: 85%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 32px;
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
   padding: 3rem 2rem;
   text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-logo {
@@ -220,10 +231,10 @@ onUnmounted(() => {
 }
 
 .mobile-link {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.2rem;
-  border-radius: 16px;
+  border-radius: 12px;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -235,22 +246,35 @@ onUnmounted(() => {
   transition: all 0.3s;
 }
 
+.mobile-link:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
 .mobile-link.primary {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background: linear-gradient(135deg, var(--accent-primary), #A78BFA);
+  border-color: transparent;
 }
 
 .close-menu {
   margin-top: 3rem;
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.close-menu:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
 }
 
 @media (max-width: 768px) {
@@ -270,6 +294,12 @@ onUnmounted(() => {
     top: 1rem;
     padding: 0.6rem 1.2rem;
     width: 92%;
+    border-radius: 14px;
+  }
+
+  .navbar.scrolled {
+    top: 0.75rem;
+    width: 94%;
   }
 
   .logo {
@@ -293,13 +323,19 @@ onUnmounted(() => {
     top: 0.75rem;
     padding: 0.5rem 1rem;
     width: 94%;
-    border-radius: 60px;
+    border-radius: 12px;
+  }
+
+  .navbar.scrolled {
+    top: 0.5rem;
+    width: 96%;
+    padding: 0.45rem 0.9rem;
   }
 
   .mobile-menu-content {
     width: 90%;
     padding: 2rem 1.25rem;
-    border-radius: 28px;
+    border-radius: 20px;
   }
 }
 
@@ -308,7 +344,13 @@ onUnmounted(() => {
     top: 0.5rem;
     padding: 0.4rem 0.75rem;
     width: 96%;
-    border-radius: 40px;
+    border-radius: 10px;
+  }
+
+  .navbar.scrolled {
+    top: 0.4rem;
+    width: 97%;
+    padding: 0.35rem 0.65rem;
   }
 
   .logo {
@@ -316,8 +358,8 @@ onUnmounted(() => {
   }
 
   .mobile-toggle {
-    min-width: 40px;
-    min-height: 40px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .mobile-toggle svg {
@@ -328,7 +370,7 @@ onUnmounted(() => {
   .mobile-menu-content {
     width: 92%;
     padding: 1.5rem 1rem;
-    border-radius: 24px;
+    border-radius: 16px;
   }
 
   .mobile-logo {
@@ -345,6 +387,46 @@ onUnmounted(() => {
   .btn-primary.mini {
     padding: 0.5rem 1rem;
     font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    top: 0.4rem;
+    padding: 0.35rem 0.6rem;
+    width: 97%;
+    border-radius: 10px;
+  }
+  .navbar.scrolled {
+    top: 0.3rem;
+    width: 98%;
+    padding: 0.3rem 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
+  .mobile-toggle {
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .mobile-toggle svg {
+    width: 22px;
+    height: 22px;
+  }
+  .mobile-menu-content {
+    width: 94%;
+    padding: 1.25rem 0.85rem;
+    border-radius: 14px;
+  }
+  .mobile-logo {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .mobile-link {
+    padding: 0.85rem;
+    font-size: 0.9rem;
+    min-height: 44px;
   }
 }
 

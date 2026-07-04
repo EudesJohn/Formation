@@ -14,28 +14,28 @@ const MASTER_CODE = 'ELITE-2026-PRO'
 
 const handleActivation = () => {
   if (!accessCode.value) {
-    error.value = "Veuillez entrer votre code d'accÃ¨s."
+    error.value = "Veuillez entrer votre code d'accès."
     return
   }
 
   isLoading.value = true
-  
-  // Simulation d'une petite attente pour le cÃ´tÃ© "Premium/SÃ©rieux"
+
+  // Simulation d'une petite attente pour le côté "Premium/Sérieux"
   setTimeout(() => {
     if (accessCode.value.trim().toUpperCase() === MASTER_CODE) {
       localStorage.setItem('ebook_access_token', 'validated_elite_2026')
-      
-      gsap.to('.activation-card', { 
-        opacity: 0, 
-        y: -50, 
-        duration: 0.8, 
+
+      gsap.to('.activation-card', {
+        opacity: 0,
+        y: -50,
+        duration: 0.8,
         ease: "expo.inOut",
         onComplete: () => {
           router.push('/')
         }
       })
     } else {
-      error.value = "Code invalide. Contactez le support si le problÃ¨me persiste."
+      error.value = "Code invalide. Contactez le support si le problème persiste."
       gsap.fromTo('.activation-card', { x: -10 }, { x: 10, duration: 0.1, repeat: 5, yoyo: true })
     }
     isLoading.value = false
@@ -54,19 +54,19 @@ const handleActivation = () => {
       <div class="activation-card glass-card animate-float">
         <div class="icon-header">
           <div class="lock-circle">
-            <Lock :size="32" class="gold-text" v-if="!isLoading" />
+            <Lock :size="32" class="amber-icon" v-if="!isLoading" />
             <div class="loader-spinner" v-else></div>
           </div>
         </div>
 
-        <h1 class="luxury-title">AccÃ¨s <span class="gold-text">Restreint</span></h1>
-        <p class="subtitle">Veuillez entrer votre code d'activation Ã‰lite pour dÃ©bloquer le contenu de la Masterclass.</p>
+        <h1 class="luxury-title">Accès <span class="amber-text">Restreint</span></h1>
+        <p class="subtitle">Veuillez entrer votre code d'activation Élite pour débloquer le contenu de la Masterclass.</p>
 
         <div class="input-group">
-          <input 
-            v-model="accessCode" 
-            type="text" 
-            placeholder="Entrez votre code ici..." 
+          <input
+            v-model="accessCode"
+            type="text"
+            placeholder="Entrez votre code ici..."
             @keyup.enter="handleActivation"
             class="elite-input"
           />
@@ -74,11 +74,11 @@ const handleActivation = () => {
         </div>
 
         <button @click="handleActivation" class="btn-primary activation-btn" :disabled="isLoading">
-          Activer mon accÃ¨s <ShieldCheck :size="20" />
+          Activer mon accès <ShieldCheck :size="20" />
         </button>
 
         <div class="support-link">
-          <p>Pas de code ? <a href="https://fooocsof.mychariow.shop" target="_blank">Obtenir mon accÃ¨s Elite</a></p>
+          <p>Pas de code ? <a href="https://fooocsof.mychariow.shop" target="_blank">Obtenir mon accès Elite</a></p>
         </div>
       </div>
     </main>
@@ -92,7 +92,7 @@ const handleActivation = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #050505;
+  background-color: var(--bg-dark);
   overflow: hidden;
   position: relative;
   padding: 1rem;
@@ -110,11 +110,11 @@ const handleActivation = () => {
   height: 400px;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
-.orb-1 { background: #D4AF37; top: -100px; right: -100px; }
-.orb-2 { background: #7c3aed; bottom: -100px; left: -100px; }
+.orb-1 { background: var(--gold); top: -100px; right: -100px; }
+.orb-2 { background: var(--accent-primary); bottom: -100px; left: -100px; }
 
 .activation-container {
   z-index: 10;
@@ -125,9 +125,9 @@ const handleActivation = () => {
 
 .activation-card {
   padding: 3rem;
-  border-radius: 30px;
-  background: rgba(15, 15, 15, 0.7);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+  background: rgba(15, 15, 18, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.15);
 }
 
 .icon-header {
@@ -139,16 +139,17 @@ const handleActivation = () => {
 .lock-circle {
   width: 80px;
   height: 80px;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid #D4AF37;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid var(--gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
 }
 
-.gold-text { color: #D4AF37; }
+.amber-text { color: var(--gold); }
+.amber-icon { color: var(--gold); }
 
 .luxury-title {
   font-size: 2rem;
@@ -157,7 +158,7 @@ const handleActivation = () => {
 }
 
 .subtitle {
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
@@ -169,8 +170,8 @@ const handleActivation = () => {
 
 .elite-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
   padding: 1rem 1.5rem;
   border-radius: 12px;
   color: white;
@@ -182,9 +183,9 @@ const handleActivation = () => {
 
 .elite-input:focus {
   outline: none;
-  border-color: #D4AF37;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
 }
 
 .error-msg {
@@ -201,11 +202,11 @@ const handleActivation = () => {
 .support-link {
   margin-top: 2rem;
   font-size: 0.9rem;
-  color: #64748b;
+  color: var(--text-secondary);
 }
 
 .support-link a {
-  color: #D4AF37;
+  color: var(--gold);
   text-decoration: none;
   font-weight: 600;
 }
@@ -217,8 +218,8 @@ const handleActivation = () => {
 .loader-spinner {
   width: 30px;
   height: 30px;
-  border: 3px solid rgba(212, 175, 55, 0.3);
-  border-top-color: #D4AF37;
+  border: 3px solid rgba(245, 158, 11, 0.2);
+  border-top-color: var(--gold);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -229,7 +230,7 @@ const handleActivation = () => {
 
 @media (max-width: 640px) {
   .activation-container { padding: 1.25rem; }
-  .activation-card { padding: 2rem 1.5rem; border-radius: 24px; }
+  .activation-card { padding: 2rem 1.5rem; border-radius: 16px; }
   .luxury-title { font-size: 1.6rem; }
   .subtitle { font-size: 0.85rem; margin-bottom: 1.5rem; }
   .elite-input { padding: 0.85rem; font-size: 0.95rem; }
@@ -239,7 +240,7 @@ const handleActivation = () => {
 
 @media (max-width: 375px) {
   .activation-container { padding: 1rem; }
-  .activation-card { padding: 1.5rem 1.25rem; border-radius: 20px; }
+  .activation-card { padding: 1.5rem 1.25rem; border-radius: 14px; }
   .luxury-title { font-size: 1.4rem; }
   .subtitle { font-size: 0.8rem; margin-bottom: 1.25rem; }
   .elite-input { padding: 0.75rem; font-size: 0.9rem; }
@@ -250,7 +251,7 @@ const handleActivation = () => {
 
 @media (max-width: 360px) {
   .activation-container { padding: 0.75rem; }
-  .activation-card { padding: 1.25rem 1rem; border-radius: 18px; }
+  .activation-card { padding: 1.25rem 1rem; border-radius: 12px; }
   .luxury-title { font-size: 1.25rem; }
   .subtitle { font-size: 0.78rem; margin-bottom: 1rem; }
   .elite-input { padding: 0.65rem; font-size: 0.85rem; letter-spacing: 1px; }
@@ -260,5 +261,4 @@ const handleActivation = () => {
   .support-link p { font-size: 0.8rem; }
   .error-msg { font-size: 0.78rem; }
 }
-
 </style>
